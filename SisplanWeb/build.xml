@@ -1,0 +1,57 @@
+<project name="spring_ibatis ant tasks" default="build" basedir=".">
+    <description>
+        spring_ibatis ant tasks
+    </description>
+
+    <property environment="env"/>
+    <property name="filename" value="spring_ibatis"/>
+    <property name="src" location="java/src"/>
+    <property name="build" location="WEB-INF/classes"/>
+    <property name="lib" location="WEB-INF/lib"/>
+    <property name="server" location="${env.CATALINA_HOME}"/>
+    <property name="servlet.jar" location="${server}/common/lib/servlet-api.jar"/>
+    <property name="deploy" location="${server}/webapps/${filename}.war"/>
+
+    <target name="init">
+        <tstamp/>
+        <delete dir="${build}"/>
+        <mkdir dir="${build}"/>
+    </target>
+
+    <path id="project.class.path" >
+        <pathelement path="${env.classpath}"/>
+        <fileset dir="${lib}">
+            <include name="**/*.jar"/>
+        </fileset>
+        <pathelement location="${src}"/>
+        <pathelement location="${build}"/>
+        <pathelement location="${servlet.jar}"/>
+    </path>
+
+    <target name="compile" depends="init" description="compile the source " >
+        <echo message="compiling files"/>
+        <javac srcdir="${src}" destdir="${build}" classpathref="project.class.path"/>
+        <echo message="copying other src xml and property files to classes"/>
+        <copy toDir="${build}">
+            <fileset dir="${src}">
+                <include name="**/*.properties"/>
+                <include name="**/*.xml"/>
+            </fileset>
+        </copy>
+    </target>
+
+    <target name="war" depends="compile" description="Builds and deploys application war file">
+        <delete dir="${server}/webapps/${filename}"/>
+        <delete file="${deploy}"/>
+        <war webxml="WEB-INF/web.xml" destfile="${deploy}">
+            <fileset dir="resources">
+                <include name="**/**.gif"/>
+                <include name="**/**.jsp"/>
+                <include name="**/**.css"/>
+                <include name="**/**.js"/>
+                <include name="**/**.html"/>
+            </fileset>
+            <webinf dir="WEB-INF" includes="**" />
+        </war>
+    </target>
+</project>

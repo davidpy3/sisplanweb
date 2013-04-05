@@ -1,0 +1,19 @@
+HSQL Set up
+-----------
+1) Download from http://hsqldb.org/
+2) Unzip it into dir of choice (here on as {hsql-dir})
+3) Copy hsqldb.jar from {hsql-dir}/hsqldb/lib and place copy in C:\{yourTomcatDir}\common\lib
+4) Make directory in {hsql-dir}/hsqldb called "mydb"
+5) Copy the mydb.script from the root of rr-ibatis and place this script in the hsql-dir/hsqldb/mydb dir.
+6) From cmd line move to the mydb dir ({hsql-dir}/hsqldb/mydb) and run the following:
+
+   java -cp ../lib/hsqldb.jar org.hsqldb.Server -database.0 mydb -dbname.0 xdb
+
+   *You will need to always have the server started by doing the above in order for the local app we are building to run
+7) When you want to kill that server just press ctrl-c from the window where its running
+
+
+MISC:
+
+CREATE TABLE employee ( id INTEGER IDENTITY, first_name VARCHAR(256), last_name VARCHAR(256), age INTEGER )
+java -cp ../lib/hsqldb.jar org.hsqldb.util.DatabaseManager

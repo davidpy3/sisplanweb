@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE sqlMap PUBLIC "-//iBATIS.com//DTD SQL Map 2.0//EN" "http://www.ibatis.com/dtd/sql-map-2.dtd">
+<sqlMap namespace="MvmntosCrdto">
+    <cacheModel id="mvmntoscrdtoCache" type="MEMORY" readOnly="false" serialize="true">
+        <flushInterval hours="1"/>
+    </cacheModel>
+
+    <parameterMap id="vecMvmntosCrdto" class="java.util.Map">
+       <parameter property="p_cCia" javaType="string" mode="IN" jdbcType="VARCHAR"/>
+       <parameter property="p_dFecha" javaType="string" mode="IN" jdbcType="VARCHAR"/>
+       <parameter property="p_cCorrentista" javaType="string" mode="IN" jdbcType="VARCHAR"/>
+       <parameter property="pResult" javaType="java.sql.ResultSet" mode="OUT" jdbcType="ORACLECURSOR" resultMap="mvmntosCrdtoResult"  /> 
+    </parameterMap>
+    
+    <resultMap id="mvmntosCrdtoResult" class="java.util.HashMap">
+        <result property="COD_CORRENTISTA" column="COD_CORRENTISTA"/>
+        <result property="NOMB_CORRENTISTA" column="NOMB_CORRENTISTA"/>
+         <result property="DESCRIP_DOCUM" column="DESCRIP_DOCUM" />
+             <result property="NMRO_SRIE" column="NMRO_SRIE" />
+             <result property="NUMERO" column="NUMERO" />
+             <result property="TC_DOC" column="TC_DOC" />
+             <result property="FECHA_EMISION" column="FECHA_EMISION" />
+             <result property="FECHA_VENCIMIENTO" column="FECHA_VENCIMIENTO" />
+             <result property="MONEDA" column="MONEDA" />
+             <result property="IMPORTE_DOCUMENTO" column="IMPORTE_DOCUMENTO" />
+             <result property="SALDO_SOLES" column="SALDO_SOLES" />
+             <result property="SALDO_DOLARES" column="SALDO_DOLARES" />
+             <result property="TOTAL_SOLES" column="TOTAL_SOLES" />
+             <result property="GLOSA1" column="GLOSA1" />
+             <result property="GLOSA2" column="GLOSA2" />
+             <result property="GLOSA3" column="GLOSA3" />        
+     </resultMap>
+    
+    <procedure id="getMvmntosByDate"  parameterMap="vecMvmntosCrdto">
+        { call SISWEB.PKG_WEB_CONTA.PRC_CXC_FECHA(?,?,?,?) }
+    </procedure>
+    
+</sqlMap>

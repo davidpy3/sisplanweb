@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE sqlMap PUBLIC "-//iBATIS.com//DTD SQL Map 2.0//EN" "http://www.ibatis.com/dtd/sql-map-2.dtd">
+<sqlMap namespace="Rol">
+
+    <typeAlias alias="RolObject" type="com.pe.manpower.sisplan.to.Rol"/>
+    <typeAlias alias="RolMenuObject" type="com.pe.manpower.sisplan.to.RolMenu"/>
+    <typeAlias alias="UsuarioRolObject" type="com.pe.manpower.sisplan.to.UsuarioRol"/>
+    
+    <cacheModel id="rolCache" type="MEMORY" readOnly="false" serialize="true">
+        <flushInterval hours="24"/>
+        <flushOnExecute statement="Rol.update"/>
+        <flushOnExecute statement="Rol.insert"/>
+        <flushOnExecute statement="Rol.delete"/>
+    </cacheModel>
+
+     <resultMap id="rolResult" class="RolObject">
+      <result column="COD_ROL" property="id" jdbcType="NUMBER" javaType="Integer" />
+      <result column="DESCRIPCION" property="nombre" jdbcType="VARCHAR" javaType="string" />
+     </resultMap>
+        
+    <!-- hsql db used for this example capitalizes col names
+         so Map will have them as all caps -->
+    <select id="getAll" resultClass="java.util.HashMap" cacheModel="rolCache">
+        SELECT COD_ROL id, DESCRIPCION nombre
+        FROM ROL
+        ORDER BY COD_ROL
+    </select>
+    
+    <select id="getMenuByRol" resultClass="java.util.HashMap" parameterClass="java.lang.Integer">
+        SELECT m.menuid,m.menutipo,lpad(' ',2*(level-1)) || menutitle menutitle,m.estado,m.parentid ,
+               decode((select 1 from menu_rol r where r.menuid=m.menuid and r.cod_rol=#value# ),1,'S','N') acceso
+        FROM menu m 
+        START WITH  m.parentid IS  NULL 
+        CONNECT BY  PRIOR m.menuid = m.parentid
+        ORDER SIBLINGS BY m.menuorden
+    </select>
+    
+    <select id="getUsersByRol" resultClass="java.util.HashMap" parameterClass="java.lang.Integer">
+        select a.usuario ,b.ape_pat||' '||b.ape_mat||' '||b.nombre nombre,usuario_crea,fec_crea
+        from usuario_rol a,arcfusu b
+        where b.USUARIO=a.usuario
+         and a.COD_ROL=#value#
+        ORDER BY 2
+    </select>
+    
+    <select id="getUsersNotInRol" resultClass="com.pe.manpower.sisplan.to.Usuario" parameterClass="java.lang.Integer">
+        select a.usuario login,a.ape_pat ap_pat,a.ape_mat ap_mat,a.nombre
+        from arcfusu a
+        where a.activo='S'
+          and NOT exists ( select 1 
+                           from usuario_rol b
+                           where b.USUARIO=a.usuario
+                            and b.cod_rol=#value#
+                         )
+         order by 2 
+    </select>
+    
+    <select id="getById" resultMap="rolResult" parameterClass="java.lang.Integer">
+        SELECT cod_rol,descripcion
+        FROM rol
+        WHERE cod_rol =  #value#
+    </select>
+
+    <update id="update" parameterClass="RolObject">
+        UPDATE ROL
+        SET descripcion = #nombre#
+        WHERE cod_rol = #id#
+    </update>
+
+    <insert id="insert" parameterClass="RolObject">
+        INSERT INTO ROL (COD_ROL, DESCRIPCION )
+        VALUES ( null, #nombre# )
+    </insert>
+
+    <delete id="delete" parameterClass="java.lang.Integer">
+        DELETE FROM ROL WHERE cod_rol = #value#
+    </delete>
+    
+    <insert id="insertRolMenu" parameterClass="RolMenuObject">
+        INSERT INTO MENU_ROL (MENUID, COD_ROL, USUARIO_CREA,FEC_CREA )
+        VALUES ( #menuid#, #rolid# , #usuario# , sysdate )
+    </insert>
+
+    <delete id="deleteRolMenu" parameterClass="RolMenuObject">
+        DELETE FROM MENU_ROL WHERE menuid=#menuid#  and cod_rol = #rolid#
+    </delete>
+    
+    <insert id="insertUsuarioRol" parameterClass="UsuarioRolObject">
+        INSERT INTO USUARIO_ROL (USUARIO, COD_ROL, USUARIO_CREA,FEC_CREA )
+        VALUES ( #usuario#, #rolid# , #usuario_crea# , sysdate )
+    </insert>
+
+    <delete id="deleteUsuarioRol" parameterClass="UsuarioRolObject">
+        DELETE FROM USUARIO_ROL WHERE usuario=#usuario#  and cod_rol = #rolid#
+    </delete>
+            
+</sqlMap>

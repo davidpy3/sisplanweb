@@ -1,0 +1,388 @@
+/*--------------------------------------------------------*/
+#master { position: absolute; width: 774px; margin-left: -387px; margin-top: 0px; left: 50%; }
+
+/* Estilos globales*/
+body {
+	margin-left: 0px;
+	margin-top: 0px;
+	margin-right: 0px;
+	margin-bottom: 0px;
+	background-color: #ffffff;
+}
+
+/***************************************************************/
+/*-- CONTENIDOS --*/
+/***************************************************************/
+/*Estilo para el contenido general*/
+.contenido {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 10px;	
+	color: #333333;
+}
+
+/*Estilo para el contenido general en NEGRITA*/
+.contenido_negrita {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 10px;
+	font-weight: bold;
+	color: #333333;
+}
+
+/*Estilo para el contenido mas claro; para el pie de pagina*/
+.contenido_especial {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 10px;
+	color: #5B8AC4;
+}
+
+/*Estilo para el contenido general en NEGRITA*/
+.caja_obligatoria {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 8px;
+	font-weight: bold;
+	color: #990000;
+}
+
+/***************************************************************/
+/*-- TABLA BUSQUEDAS --*/
+/* ************************************************************ */
+
+table.busqueda {
+    border: 1px solid #666;
+    margin: 20px 0 20px 0;
+    color: black;
+    background-color: #ffffff;	
+}
+
+table.busqueda th{
+    font-family: Verdana;
+    font-size: 9px;
+    font-weight: bold;
+    color: #FF6633;
+    border-width: thin;	
+    text-align: center;
+    background-color:#FEEBBA;
+}
+
+table.busqueda td{
+    BACKGROUND-COLOR: #FFFCF9;
+    COLOR: BLACK;
+    FONT-FAMILY: Tahoma;
+    FONT-SIZE: 7.5pt;
+    FONT-WEIGHT: bold;	 
+}
+
+/***************************************************************/
+/*-- TABLA SUBBUSQUEDAS --*/
+/* ************************************************************ */
+
+table.subbusqueda {
+    border: 1px solid #666;
+    margin: 20px 0 20px 0;
+    color: black;
+    background-color: #ffffff;	
+}
+
+table.subbusqueda th{
+    font-family: Verdana;
+    font-size: 9px;
+    font-weight: bold;
+    color: #FFFFFF;
+    border-width: thin;	
+    text-align: center;
+    background-color: #EAAF44;
+}
+
+table.subbusqueda tr.even{
+    BACKGROUND-COLOR: #FDF4D9;
+    COLOR: BLACK;
+    FONT-FAMILY: Tahoma;
+    FONT-SIZE: 7.5pt;    
+}
+
+table.subbusqueda tr.odd{
+    BACKGROUND-COLOR: #ffffff;
+    COLOR: BLACK;
+    FONT-FAMILY: Tahoma;
+    FONT-SIZE: 7.5pt;    
+}
+
+/***************************************************************/
+/*-- TITULOS BUSQUEDA--*/
+/* ************************************************************ */
+.cabecera_busqueda{
+    font-family: Verdana;
+    font-size: 9px;
+    font-weight: bold;
+    color: #FFFFFF;
+    border-width: thin;	    
+    background-color: #1D75BD;
+}
+
+
+/***************************************************************/
+/*-- TITULOS --*/
+/* ************************************************************ */
+.titulo_1 {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 20px;
+	color: #003399;
+	font-weight: bold;
+}
+.titulo_2 {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 18px;
+	color: #003399;
+	font-weight: bold;
+}
+.titulo_3 {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 16px;
+	color: #003399;
+	font-weight: bold;
+}
+.titulo {
+	font-family: Bodoni,Verdana, Arial, Helvetica, sans-serif;
+	font-size: 14px;
+	color: #0042CA;
+	font-weight: bold;
+}
+.titulo_5 {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	color: #003399;
+	font-weight: bold;
+}
+
+
+
+
+/***************************************************************/
+/*-- LINK  --*/
+/* ************************************************************ */
+.titulo_opciones {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 10px;
+	color: #003399;
+	font-weight: bold;
+}
+
+A.link{ 
+	color: #003399;
+	font-size: 10px;
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	text-decoration :none;
+}
+A.link:active {  
+	text-decoration :underline;
+	color:#003399;
+}
+A.link:hover {  
+	text-decoration :underline;
+	color: #003399;
+}
+A.link:visited {  
+	text-decoration :none;
+	color:#003399;
+	}
+A.link:visited:hover { 
+	text-decoration :underline;
+	color: #003399;
+}
+
+
+
+/***************************************************************/
+/*-- INPUT --*/
+/* ************************************************************ */
+/*Formato de los Botones*/
+.button a{
+	background-color: #346CAB;
+	color: #ffffff;
+	text-decoration: none;
+	border: 1px solid #346CAB;
+	padding: 2px 8px 0 3px; 
+	font-weight: bold;
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 10px;
+}
+.button a:hover {background-color: #AED3EE; border:1px solid #346CAB; color:#346CAB;}
+
+
+
+
+/***************************************************************/
+/*-- INPUT --*/
+/* ************************************************************ */
+/*Formao del los input*/
+.cajas_texto{
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 10px;
+	text-decoration: none;
+	color: #333333;
+	background-color: #ffffff;
+}
+/*Formao del los input _ 1*/
+.cajas_texto_obli{
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 10px;
+	text-decoration: none;
+	color: #333333;
+	background-color: #FDFFD5;
+}
+
+.cajas_texto_esp{
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 10px;
+	text-decoration: none;
+	color: #BC1367;
+	background-color: #FDFFD5;
+}
+
+/***************************************************************/
+/*-- MENU --*/
+/* ************************************************************ */
+.titulo_menu {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	color: #003399;
+	font-weight: bold;
+}
+
+/***************************************************************/
+/*-- ETIQUETAS  --*/
+/* ************************************************************ */
+
+.label {
+	font-family: Bodoni,Verdana, Arial, Helvetica, sans-serif;
+	font-size: 10px;
+	color: #000000;
+	font-weight: bold;
+}
+
+.label2 {
+	font-family: Bodoni,Verdana, Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	color: #000099;
+	font-weight: bold;
+}
+
+.label3 {
+	font-family: Bodoni,Verdana, Arial, Helvetica, sans-serif;
+	font-size: 14px;
+	color: #000099;
+	font-weight: bold;
+}
+/***************************************************************/
+/*-- TABLAS Externas --*/
+/* ************************************************************ */
+
+table.modelo1_cab {
+    border: 3px solid #666;
+	border-color: #FFCC66;
+    color: black;
+    background-color: #FFFFCC;	
+}
+table.modelo1_cab th{
+    border: 1px solid #666;
+	border-color: #FFCC00;
+    font-family: Verdana, Arial, Helvetica, sans-serif;	
+    font-size: 12px;
+    font-weight: bold;
+    text-align: center;
+    background-color:#FFCC66;
+	color: #FFFFFF;
+}
+table.modelo1_cab td{
+    border: 1px solid #666;
+	border-color: #FFCC00;
+    font-family: Verdana, Arial, Helvetica, sans-serif;	
+    font-size: 9px;
+    COLOR: BLACK;
+}
+
+
+table.modelo2_cab {
+    border: 3px solid #666;
+	border-color: #389C56;
+    color: black;
+    background-color: #F4FDF5;	
+}
+table.modelo2_cab th{
+    border: 1px solid #666;
+	border-color: #389C56;
+    font-family: Verdana, Arial, Helvetica, sans-serif;	
+    font-size: 12px;
+    font-weight: bold;
+    text-align: center;
+    background-color:#389C56;
+	color: #FFFFFF;
+}
+table.modelo2_cab td{
+    border: 1px solid #666;
+	border-color: #389C56;
+    font-family: Verdana, Arial, Helvetica, sans-serif;	
+    font-size: 9px;
+    COLOR: BLACK;
+}
+
+
+table.modelo3_cab {
+    border: 3px solid #666;
+	border-color: #3473C0;
+    color: black;
+    background-color: #F5F9FC;	
+}
+table.modelo3_cab th{
+    border: 1px solid #666;
+	border-color: #3473C0;
+    font-family: Verdana, Arial, Helvetica, sans-serif;	
+    font-size: 12px;
+    font-weight: bold;
+    text-align: center;
+    background-color:#3473C0;
+	color: #FFFFFF;
+}
+table.modelo3_cab td{
+    border: 1px solid #666;
+	border-color: #3473C0;
+    font-family: Verdana, Arial, Helvetica, sans-serif;	
+    font-size: 9px;
+    COLOR: BLACK;
+}
+
+
+table.modelo4_cab {
+    border: 3px solid #666;
+	border-color: #F74940;
+    color: black;
+    background-color: #FFF4F2;	
+}
+table.modelo4_cab th{
+    border: 1px solid #666;
+	border-color: #F74940;
+    font-family: Verdana, Arial, Helvetica, sans-serif;	
+    font-size: 12px;
+    font-weight: bold;
+    text-align: center;
+    background-color:#F74940;
+	color: #FFFFFF;
+}
+table.modelo4_cab td{
+    border: 1px solid #666;
+	border-color: #F74940;
+    font-family: Verdana, Arial, Helvetica, sans-serif;	
+    font-size: 9px;
+    COLOR: BLACK;
+}
+
+.cajas_texto_horario{
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 13px;
+	text-decoration: none;
+	color: #333333;
+	background-color: #ffffff;
+	text-align:"right";
+	font-weight: bold;
+}
+

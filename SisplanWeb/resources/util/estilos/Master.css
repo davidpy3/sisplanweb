@@ -1,0 +1,719 @@
+/* ************************************************************************************ */
+/* *******  Librería de CSS Global.css  ******* */
+/* Atributos globales estandar de estilo de REL. */
+/* ---------------------------------------------------------------------------------------------------------------- */
+
+
+
+#master { position: absolute;  margin-left: -387px; margin-top: 0px; left: 50%; }
+
+
+
+/* ----------------------------------------------------------- */
+.contenido_nblanco {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 10px;	
+	color: #ffffff;
+        font-weight: bold;
+}
+
+.contenido_especial {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 10px;
+	color: #5B8AC4;
+}
+
+.menu_titulo{
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 9px;
+        font-weight: bold;
+	color: #ffffff;	
+	text-align: center;
+}
+
+
+A.menu_elementos{ 
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 9px;
+        font-weight: bold;
+	color: #145B8F;	
+        text-decoration :none;
+}
+A.menu_elementos:active {  
+	text-decoration :none;	
+        color: #145B8F;
+}
+A.menu_elementos:hover {  
+	text-decoration :none;	
+        color: #145B8F;    
+}
+A.menu_elementos:visited {  
+	text-decoration :none;	
+        color: #145B8F;
+}
+A.menu_elementos:visited:hover { 
+	text-decoration :none;
+        color: #145B8F;
+}
+
+
+
+/* ----------------------------------------------------------- */
+
+
+
+.MenuText
+{
+	font-size: 11px;
+	color: #ffffff;
+	font-family: Arial, Verdana;
+}
+.Normal
+{
+	font-size: 11px;
+	color: #272A55;
+	font-family: Arial, Verdana;
+}
+.NormalAlt
+{
+	font-size: 11px;
+	color: #25547A;
+	font-family: Arial, Verdana;
+}
+.TituloTabla
+{
+	font-size: 11px;
+	color: #FFFFFF;
+	background-color: #38709E;
+	font-family: Arial, Verdana;
+}
+.TableItem
+{
+	font-size: 11px;
+	color: #272A55;
+	font-family: Arial, Verdana;
+}
+
+.colortext{
+	color:#0053A6;
+	FONT-FAMILY: Verdana;
+    FONT-SIZE: 8pt;
+	text-align:center;
+	font-stretch:semi-expanded;
+	cursor:hand;
+}
+
+.TableItemAlt
+{
+	font-size: 11px;
+	color: #272A55;
+	background-color: #F2F2F2;
+	font-family: Arial, Verdana;
+}
+table { 
+	border-collapse:collapse; 
+	font-size: 11px;	
+}
+
+.pagina {
+	font-size: 11px;
+	color:#1D75BD;
+	
+}
+
+.TabBordeCelda{
+	border-left:thin solid #4682B4;
+	border-right:thin solid #4682B4;
+	border-top:thin solid #4682B4;
+	border-bottom:thin solid #4682B4;
+	border-color:#CCCCCC;
+	FONT-FAMILY: Tahoma;
+	FONT-SIZE: 7.5pt;
+	TEXT-DECORATION: none;
+}
+
+.TD_SOMBRA
+{
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 9px;
+	color: #333333;
+	background-color: #D6D6D6;
+	text-align:center;
+}
+
+.TITULO_MOD1
+{
+	FONT-FAMILY: Tahoma;
+	FONT-SIZE: 9pt;
+	COLOR: #000000;
+	TEXT-DECORATION: none;
+	text-align:left;
+	font-weight: bold;
+}
+
+tr.header{
+	background-color:#336699;
+	font-size:11px;
+	font-weight:bold;
+	color:#FFFFFF;
+}
+.OPCION_MENU{
+	COLOR: #1D75BD;
+	FONT-FAMILY: Verdana;
+	FONT-SIZE: 10px;
+    FONT-WEIGHT: bold;
+	CURSOR: hand;
+	text-align:center;
+}
+
+.OPCION_CHECKBOX{
+	width:60px;
+	text-align:center;
+}
+
+.TEXTO_CENTER{
+	font-family: Verdana;
+	font-size: 10px;
+	font-weight: bold;
+	color:#1D75BD;
+	border-width:thin;	
+	text-decoration:overline;
+	text-align:center;
+}
+
+
+
+.tabla_cabecera{
+	font-family: Verdana;
+	font-size: 9px;
+	font-weight: bold;
+	color:#FFFFFF;
+	border-width:thin;	
+	text-align:center;
+	background-color: #1D75BD;
+}
+.tabla_cabecera_planif{
+	font-family: Verdana;
+	font-size: 9px;
+	font-weight: bold;
+	color:#FFFFFF;
+	border-width:thin;	
+	text-align:center;
+	background-color: #F5AC4C;
+}
+.SECCION{
+	font-family: Verdana;
+	font-size: 11px;
+	font-weight: bold;
+	color:#1D75BD;
+	border-width:thin;	
+	text-align:LEFT;
+	
+}
+.SECCION_PLANIF{
+	font-family: Verdana;
+	font-size: 11px;
+	font-weight: bold;
+	color:#F5AC4C;
+	border-width:thin;	
+	text-align:LEFT;
+	
+}
+.opt_menu{
+	font-family: Verdana;
+	font-size: 10px;
+	font-weight: bold;
+	color:#1D75BD;
+	border-width:thin;	
+	text-align:left;
+	
+}
+
+/* --Listados-- */
+.opt_menu_Campo{
+	font-family: Verdana;
+	font-size: 10px;
+	font-weight: bold;
+	color:#1D75BD;
+	border-width:thin;	
+	text-align:center;
+	
+}
+
+.TITULO_MOD /* ex titulo3 */
+{
+	FONT-FAMILY: Tahoma;
+	FONT-SIZE: 9pt;
+	COLOR: #000000;
+	TEXT-DECORATION: none;
+	text-align:center;
+	font-weight: bold;
+}
+
+
+
+
+
+
+
+
+.TH {
+	font-weight: bold;
+	color: #ffffff;
+	font-family: Tahoma;
+	font-size: 7.5pt;
+	text-align: center;
+	text-decoration: none;
+}
+
+
+.TH1 {
+	font-weight: bold;
+	color: black;
+	font-family: Tahoma;
+	font-size: 7.5pt;
+	text-align: center;
+	text-decoration: none; 
+}
+.body1 
+{
+	background-color: WHITE;
+}
+
+.body2 
+{
+	background-color: WHITE;
+}
+
+/* Input Text */
+
+.input_text 
+{
+    BACKGROUND-COLOR: #ffffff;
+    BORDER-BOTTOM: #336699 1px solid;
+    BORDER-LEFT: #336699 1px solid;
+    BORDER-RIGHT: #336699 1px solid;
+    BORDER-TOP: #336699 1px solid;
+    COLOR: #30608f;
+    FONT-FAMILY: Verdana;
+    FONT-SIZE: 8pt;
+}
+
+.CAJA_TEXTO4 
+{
+    width: 20px;
+	BACKGROUND-COLOR: #ffffff;
+    BORDER-BOTTOM: #808080 1px solid;
+    BORDER-LEFT: #808080 1px solid;
+    BORDER-RIGHT: #808080 1px solid;
+    BORDER-TOP: #808080 1px solid;
+    COLOR: black;
+    FONT-FAMILY: Verdana;
+    FONT-SIZE: 8pt;
+}
+
+.CAJA_TEXTO5
+{
+    width: 25px;
+	BACKGROUND-COLOR: #ffffff;
+    BORDER-BOTTOM: #808080 1px solid;
+    BORDER-LEFT: #808080 1px solid;
+    BORDER-RIGHT: #808080 1px solid;
+    BORDER-TOP: #808080 1px solid;
+    COLOR: black;
+    FONT-FAMILY: Verdana;
+    FONT-SIZE: 8pt;
+}
+
+.CAJA_TEXTO7
+{
+    width: 40px;
+	BACKGROUND-COLOR: #ffffff;
+    BORDER-BOTTOM: #808080 1px solid;
+    BORDER-LEFT: #808080 1px solid;
+    BORDER-RIGHT: #808080 1px solid;
+    BORDER-TOP: #808080 1px solid;
+    COLOR: black;
+    FONT-FAMILY: Verdana;
+    FONT-SIZE: 8pt;
+}
+
+.CAJA_TEXTO3 
+{
+    width: 60px;
+	BACKGROUND-COLOR: #ffffff;
+    BORDER-BOTTOM: #808080 1px solid;
+    BORDER-LEFT: #808080 1px solid;
+    BORDER-RIGHT: #808080 1px solid;
+    BORDER-TOP: #808080 1px solid;
+    COLOR: black;
+    FONT-FAMILY: Verdana;
+    FONT-SIZE: 8pt;
+}
+.CAJA_TEXTO2 
+{
+    width: 100px;
+	BACKGROUND-COLOR: #ffffff;
+    BORDER-BOTTOM: #808080 1px solid;
+    BORDER-LEFT: #808080 1px solid;
+    BORDER-RIGHT: #808080 1px solid;
+    BORDER-TOP: #808080 1px solid;
+    COLOR: black;
+    FONT-FAMILY: Verdana;
+    FONT-SIZE: 8pt;
+}
+
+.CAJA_TEXTO6
+{
+    width: 150px;
+	BACKGROUND-COLOR: #ffffff;
+    BORDER-BOTTOM: #808080 1px solid;
+    BORDER-LEFT: #808080 1px solid;
+    BORDER-RIGHT: #808080 1px solid;
+    BORDER-TOP: #808080 1px solid;
+    COLOR: black;
+    FONT-FAMILY: Verdana;
+    FONT-SIZE: 8pt;
+}
+
+.CAJA_TEXTO1 
+{
+    width: 200px;
+	BACKGROUND-COLOR: #ffffff;
+    BORDER-BOTTOM: #808080 1px solid;
+    BORDER-LEFT: #808080 1px solid;
+    BORDER-RIGHT: #808080 1px solid;
+    BORDER-TOP: #808080 1px solid;
+    COLOR: black;
+    FONT-FAMILY: Verdana;
+    FONT-SIZE: 8pt;
+}
+
+.CAJA_TEXTO8
+{
+    width: 250px;
+	BACKGROUND-COLOR: #ffffff;
+    BORDER-BOTTOM: #808080 1px solid;
+    BORDER-LEFT: #808080 1px solid;
+    BORDER-RIGHT: #808080 1px solid;
+    BORDER-TOP: #808080 1px solid;
+    COLOR: black;
+    FONT-FAMILY: Verdana;
+    FONT-SIZE: 8pt;
+}
+
+.CAJA_RAZON
+{
+    width: 350px;
+	BACKGROUND-COLOR: #ffffff;
+    BORDER-BOTTOM: #808080 1px solid;
+    BORDER-LEFT: #808080 1px solid;
+    BORDER-RIGHT: #808080 1px solid;
+    BORDER-TOP: #808080 1px solid;
+    COLOR: black;
+    FONT-FAMILY: Verdana;
+    FONT-SIZE: 8pt;
+}
+
+.CAJA_TEXTO9
+{
+    width: 300px;
+	BACKGROUND-COLOR: #ffffff;
+    BORDER-BOTTOM: #808080 1px solid;
+    BORDER-LEFT: #808080 1px solid;
+    BORDER-RIGHT: #808080 1px solid;
+    BORDER-TOP: #808080 1px solid;
+    COLOR: black;
+    FONT-FAMILY: Verdana;
+    FONT-SIZE: 8pt;
+}
+
+/* COMBO */
+
+.combo
+{
+    BORDER-BOTTOM: #808080 1px solid;
+    BORDER-LEFT: #808080 1px solid;
+    BORDER-RIGHT: #808080 1px solid;
+    BORDER-TOP: #808080 1px solid;
+    FONT-FAMILY: Verdana;
+    FONT-SIZE: 8pt;
+}
+
+
+.COMBO1
+{
+    width: 35px;
+	BACKGROUND-COLOR: #ffffff;
+    COLOR: black;
+    FONT-FAMILY: Verdana;
+    FONT-SIZE: 7pt;
+	text-align:center;
+}
+.combo2
+{
+    width: 20px;
+	BACKGROUND-COLOR: #ffffff;
+    COLOR: black;
+    FONT-FAMILY: Verdana;
+    FONT-SIZE: 7pt;
+	text-align:center;
+}
+.td1
+{
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 9px;
+	color: #333333;
+	background-color: #D6D6D6;
+	text-align:center;
+}
+
+.CAJA_TEXTO_INF 
+{
+    width: 30px;
+	BACKGROUND-COLOR: #ffffff;
+    BORDER-BOTTOM: #808080 1px solid;
+    BORDER-LEFT: #808080 1px solid;
+    BORDER-RIGHT: #808080 1px solid;
+    BORDER-TOP: #808080 1px solid;
+    COLOR: black;
+    FONT-FAMILY: Verdana;
+    FONT-SIZE: 8pt
+}
+.CAJA_TEXTO_IMPORTE
+{
+    width: 50;
+	BACKGROUND-COLOR: #ffffff;
+    BORDER-BOTTOM: #808080 1px solid;
+    BORDER-LEFT: #808080 1px solid;
+    BORDER-RIGHT: #808080 1px solid;
+    BORDER-TOP: #808080 1px solid;
+    COLOR: black;
+    FONT-FAMILY: Verdana;
+    FONT-SIZE: 8pt
+}
+.CODIGO_TABLA 
+{
+    width: 50px;
+	BACKGROUND-COLOR: #ffffff;
+    BORDER-BOTTOM: #808080 1px solid;
+    BORDER-LEFT: #808080 1px solid;
+    BORDER-RIGHT: #808080 1px solid;
+    BORDER-TOP: #808080 1px solid;
+    COLOR: black;
+    FONT-FAMILY: Verdana;
+    FONT-SIZE: 8pt;
+}
+
+
+/* Textos */
+
+.text_normal
+{
+	COLOR: BLACK;
+	FONT-FAMILY: Tahoma;
+	FONT-SIZE: 7.5pt;
+    FONT-WEIGHT: bold;
+}
+
+
+.text_normal_1
+{
+	
+	FONT-FAMILY: Tahoma;
+	FONT-SIZE: 10pt;
+    FONT-WEIGHT: bold;
+	/* color:#000080; */
+}
+
+
+.text_mensaje
+{
+	COLOR: RED;
+	FONT-FAMILY: Tahoma;
+	FONT-SIZE: 7.5pt;           
+}
+
+
+.menu
+{
+	COLOR: #FFFFFF;
+	FONT-FAMILY: Tahoma;
+    FONT-SIZE: 8pt;
+	FONT-WEIGHT:bold;
+}
+
+.imagen
+{
+	height:11px;
+	width:11px;
+	border-style:none;
+}
+
+.text_menu
+{
+    FONT-FAMILY: Verdana, Helvetica, sans-serif;
+    FONT-SIZE: 8pt;
+    COLOR: NAVY;
+}
+
+.text_fila /* ex fila */
+{
+    COLOR: black;
+    BACKGROUND-COLOR: white;
+    FONT-FAMILY: Tahoma;
+    FONT-SIZE: 7.5pt;
+    TEXT-ALIGN: center;
+}
+
+
+.text_fila_2 /* ex fila1 */
+{
+	COLOR: black;
+	FONT-FAMILY: Tahoma;
+    BACKGROUND-COLOR:#f0f0f0;
+	FONT-SIZE: 7.5pt;
+	TEXT-ALIGN: center;
+}
+
+
+.text_fila_3 /* ex fila1 */
+{
+	COLOR: white;
+	FONT-FAMILY: Tahoma;
+    BACKGROUND-COLOR:red;
+	FONT-SIZE: 7.5pt;
+	TEXT-ALIGN: center
+}
+
+
+/* USADO */
+.text_dentro_tabla/* ex fila */
+{
+    COLOR: black;
+    FONT-FAMILY: Tahoma;
+    FONT-SIZE: 7.5pt;
+    TEXT-ALIGN: center;
+	
+	
+}
+
+.tabBorde{
+	border-left:thin solid #4682B4;
+	border-right:thin solid #4682B4;
+	border-top:thin solid #4682B4;
+	border-bottom:thin solid #4682B4;
+	border-color:#CCCCCC;
+}
+
+.TabBordeCelda{
+	border-left:thin solid #4682B4;
+	border-right:thin solid #4682B4;
+	border-top:thin solid #4682B4;
+	border-bottom:thin solid #4682B4;
+	border-color:#CCCCCC;
+	FONT-FAMILY: Tahoma;
+	FONT-SIZE: 7.5pt;
+	TEXT-DECORATION: none;
+}
+
+/* USADO */
+.text_der_columna/* ex fila */
+{
+    TEXT-ALIGN: right;
+}
+
+
+/* Titulos */
+
+.text_titulo_1 /* ex titulo3 */
+{
+	FONT-FAMILY: Tahoma;
+	FONT-SIZE: 7.5pt;
+	
+	TEXT-DECORATION: none;
+}
+
+
+.CELDA /* ex titulo3 */
+{
+	FONT-FAMILY: Tahoma;
+	FONT-SIZE: 7.5pt;
+	TEXT-DECORATION: none;
+}
+
+.text_titulo_2 /* ex titulo4 */
+{
+	COLOR: #000080;
+	FONT-FAMILY: Tahoma;
+	FONT-SIZE: 8pt;
+	FONT-WEIGHT: bold;
+	TEXT-ALIGN: left;
+	
+}
+
+.text_titulo_3 /* ex titulo4 */
+{
+	COLOR: black;
+	FONT-FAMILY: Tahoma;
+	FONT-SIZE: 7.5pt;
+	FONT-WEIGHT: bold;
+	
+}
+ 
+.text_titulo_4 /* ex titulo2 (no usado) */
+{
+	COLOR: black;
+	FONT-FAMILY: Tahoma;
+	FONT-SIZE: 7.5pt;
+	FONT-WEIGHT: bold;
+}
+
+.text_titulo_5 /* ex titulo2 (no usado) */
+{
+	COLOR: black;
+	FONT-FAMILY: Verdana, Arial, Helvetica, sans-serif;
+	FONT-SIZE: 7.5pt;
+	FONT-WEIGHT: bold;
+}
+
+.text_titulo_6 /* ex titulo 3A (no usado) */
+{
+	COLOR: black;
+	FONT-FAMILY: Arial;
+	FONT-WEIGHT: bold;
+	FONT-SIZE: 8pt;
+}
+
+/* Tablas */
+
+.tabla_1 /* ex tabla1*/
+{
+	BACKGROUND-COLOR: WHITE;
+}
+
+
+.tabla_3 /* ex tabla */
+{
+	BACKGROUND-COLOR: #f0f0f0;
+}
+
+
+.tabla_4  {
+	BACKGROUND-COLOR: #c0c0c0;
+	TEXT-ALIGN: center;
+}
+
+.text_titulo_cabecera
+{
+    COLOR: #808080;
+	FONT-FAMILY: Arial;
+	FONT-SIZE: 18pt;
+	
+}	
+
+.colortext{
+	color:#0053A6;
+	FONT-FAMILY: Verdana;
+    FONT-SIZE: 8pt;
+}

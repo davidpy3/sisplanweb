@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN//EN"
+        "http://www.springframework.org/dtd/spring-beans.dtd">
+
+<beans>
+
+    <bean id="propertyConfigurer" class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
+        <property name="location" value="classpath:spring.properties"/>
+    </bean>
+
+    <bean name="/employeeSetUp" class="net.reumann.demo.action.EmployeeAction">
+        <constructor-arg index="0" ref="employeeService"/>
+        <constructor-arg index="1" ref="departmentService"/>
+    </bean>
+
+    <bean name="/employeeProcess" class="net.reumann.demo.action.EmployeeAction">
+        <constructor-arg index="0" ref="employeeService"/>
+        <constructor-arg index="1" ref="departmentService"/>
+    </bean>
+
+    <bean id="dataSource" class="org.apache.commons.dbcp.BasicDataSource">
+        <property name="driverClassName" value="${driverClassName}"/>
+        <property name="url" value="${url}"/>
+        <property name="username" value="${username}"/>
+        <property name="password" value="${password}"/>
+    </bean>
+
+    <bean id="sqlMapClient"
+          class="org.springframework.orm.ibatis.SqlMapClientFactoryBean">
+        <property name="configLocation">
+            <value>classpath:net/reumann/demo/persistence/SqlMapConfig.xml</value>
+        </property>
+        <property name="useTransactionAwareDataSource">
+            <value>true</value>
+        </property>
+        <property name="dataSource">
+            <ref bean="dataSource"/>
+        </property>
+    </bean>
+
+    <bean id="sqlMapClientTemplate"
+          class="org.springframework.orm.ibatis.SqlMapClientTemplate">
+        <property name="sqlMapClient">
+            <ref bean="sqlMapClient"/>
+        </property>
+    </bean>
+
+    <bean id="employeeDao" class="net.reumann.demo.persistence.EmployeeIbatisDao">
+        <property name="sqlMapClient">
+            <ref bean="sqlMapClient"/>
+        </property>
+    </bean>
+
+    <bean id="employeeService" class="net.reumann.demo.service.EmployeeDaoService">
+        <constructor-arg index="0" ref="employeeDao"/>
+    </bean>
+
+     <bean id="departmentDao" class="net.reumann.demo.persistence.DepartmentIbatisDao">
+        <property name="sqlMapClient">
+            <ref bean="sqlMapClient"/>
+        </property>
+    </bean>
+
+    <bean id="departmentService" class="net.reumann.demo.service.DepartmentDaoService">
+        <constructor-arg index="0" ref="departmentDao"/>
+    </bean>
+
+
+
+</beans>

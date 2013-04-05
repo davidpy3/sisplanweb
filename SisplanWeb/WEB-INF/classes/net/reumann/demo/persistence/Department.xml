@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE sqlMap PUBLIC "-//iBATIS.com//DTD SQL Map 2.0//EN" "http://www.ibatis.com/dtd/sql-map-2.dtd">
+<sqlMap namespace="Department">
+    <cacheModel id="departmentCache" type="MEMORY" readOnly="false" serialize="true">
+        <flushInterval hours="24"/>
+    </cacheModel>
+
+    <select id="getAll" resultClass="net.reumann.demo.vo.Department" cacheModel="departmentCache">
+        SELECT departmentid AS departmentId, name FROM DEPARTMENT
+    </select>
+</sqlMap>

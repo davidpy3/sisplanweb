@@ -1,0 +1,81 @@
+/*--------------------------------------------*/
+/*--------------------------------------------*/
+  .hmenu { 
+    /*font-weight: bold;*/
+    font-family: Verdana, Arial, Helvetica, sans-serif;
+    text-decoration: none; 
+    color: #333333; 
+    font-size: 10px; 
+    cursor: pointer; 
+    margin: 1px 0; 
+    background: #F7F8FB;
+  }
+  
+  .hmenu:hover {     
+    background: #FEEBBA; 
+  }
+  
+/*--------------------------------------------*/
+/* -- TABLA MENU -- */
+/*--------------------------------------------*/
+
+  .hsubmenu { 
+    font-family: Verdana, Arial, Helvetica, sans-serif;
+    display: block; 
+    color: #333333;  
+    font-size: 11px;     
+    text-decoration: none; 
+    padding-left: 2px;  
+    margin-left: 5px; 
+	border: 1px solid #FFFFFF; 
+  }
+
+  .hsubmenu:hover { 
+    border: 1px solid #E2A503; 
+    background: #FEEBBA; 	
+  }
+
+
+  .hoptmenu { 
+    font-family: Verdana, Arial, Helvetica, sans-serif;
+    display: block; 
+    color: #333333;  
+    font-size: 11px;     
+    text-decoration: none; 
+    padding-left: 2px;  
+    margin-left: 2px; 
+	border: 1px solid #FFFFFF; 
+  }
+
+  .hoptmenu:hover { 
+    border: 1px solid #9BCAF0; 
+    background: #F2F9FD; 	
+  }
+
+/*--------------------------------------------*/
+/* -- TABLA SUBMENU -- */
+/*--------------------------------------------*/
+  .tablesubmenu{
+	border: 1px solid #91BBDD; 
+	border-bottom: 2px solid #91BBDD; 
+	border-right: 2px solid #91BBDD; 
+	background: #FBFDFF;
+  }
+
+/*--------------------------------------------*/
+/*--------------------------------------------*/
+
+  .hmenulink { 
+    /*font-weight: bold;*/
+    font-family: Verdana, Arial, Helvetica, sans-serif;
+    text-decoration: none;    
+    font-size: 10px; 
+    color: #333333;  
+  }
+  
+  .hmenulink:hover { 
+	text-decoration: none; 
+	color: #333333;  
+  }
+  
+  

@@ -1,0 +1,107 @@
+.cal_input{
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 10px;
+	text-decoration:none;
+	color: #333333;
+	background-color:#FCFCE9;
+}
+
+/* Combo de Eleccion del Mes y Input del Año*/
+.input	{
+  font-style  : normal;
+  font-size   : 20pt;
+  color       : black;
+  font-family : "Verdana", "Arial","Helvetica",sans-serif;
+}
+/* Lu - Ma - Mi -Ju -Vi -Sa - Do*/
+.diasemana {
+  font-size   : 10pt;
+  color       : white;
+  background  : #21668F;/*#87CEFA;*/
+  font-family : "Verdana", "Tahoma","Arial";
+}
+
+/* Dias que no pertenecen a ese Mes*/
+.dmd {
+  font-style  : normal;
+  font-size   : 8pt;
+  color       : gray;
+  background  : #EDEFEF;
+  text-align  : right;
+  cursor	  :pointer;
+  font-family : "Verdana", "Tahoma","Arial";}
+  
+/* Dias - Fines de Semana*/  
+.dl {
+  font-style  : normal;
+  font-size   : 8pt;
+  color       : black;
+  background  : #DBEAF5;
+  text-align  : right;
+  cursor	  :pointer;
+  font-family : "Verdana", "Tahoma","Arial";}
+  
+/* Dias - Fines de Semana que no Corresponden al Mes */  
+.dlmd {
+  font-style  : normal;
+  font-size   : 8pt;
+  color       : gray;
+  background  : #DBEAF5;
+  text-align  : right;
+  cursor	  :pointer;
+  font-family : "Verdana", "Tahoma","Arial";}
+  
+/* Dias Activos de la Semana*/  
+.dn {
+  font-style  : normal;
+  font-size   : 8pt;
+  color       : black;
+  background  : #F3F9FC;
+  text-align  : right;
+  cursor	  :pointer;
+  font-family : "Verdana", "Tahoma","Arial";}
+  
+ /* Dia Actual de la Semana */ 
+.da {
+  font-style  : normal;
+  font-size   : 10pt;
+  color       : black;
+  background  : #ff8496;
+  text-align  : right;
+  font-weight: bold;
+  cursor:pointer;
+  font-family : "Verdana", "Tahoma","Arial";}
+  
+/* Nada*/  
+.dv {
+  font-style  : normal;
+  font-size   : 8pt;
+  color       : black;
+  background  : #1fef29;
+  text-align  : right;
+  font-family : "Verdana", "Tahoma","Arial";}
+  
+/* Nada */  
+.dva {
+  font-style  : normal;
+  font-size   : 8pt;
+  color       : black;
+  background  : #ffffcc;
+  text-align  : right;
+  font-family : "Verdana", "Tahoma","Arial";}
+  
+/*  */  
+.dvf {
+  font-style  : normal;
+  font-size   : 8pt;
+  color       : black;
+  background  : #9999ff;
+  text-align  : right;
+  font-family : "Verdana", "Tahoma","Arial";}
+  
+/* Tabla de los Dias */  
+table.calendario {
+	border: 1px solid #666;
+	margin: 5px 5px 5px 0;
+    color: black;
+}

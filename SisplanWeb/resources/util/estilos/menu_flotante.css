@@ -1,0 +1,26 @@
+/*Formato de Tabla*/
+table.divmenu {
+	border: 1px solid #2254B1;	
+}
+
+/*Colores intercalados*/
+table.divmenu tr{
+  font:  menu;
+  color: #003399;
+}
+
+.menu_separador{
+	border-bottom: 1px solid #2254B1;	
+	
+}
+
+
+/*Estilos fundamentales para el ONMOUSEOVER*/
+.menulines{
+border:0px solid black;
+
+}
+
+.menulines a{
+text-decoration:none;
+color:black;
