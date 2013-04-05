@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE sqlMapConfig
+    PUBLIC "-//iBATIS.com//DTD SQL Map Config 2.0//EN"
+    "http://www.ibatis.com/dtd/sql-map-config-2.dtd">
+
+<sqlMapConfig>
+    <!-- there are plenty of other optional settings, see the ibatis-sql-maps doc -->
+    <settings
+        enhancementEnabled="true"
+        useStatementNamespaces="true"
+        />
+    <sqlMap resource="com/pe/manpower/sisplan/persistence/MvmntosCrdto.xml"/>
+    <sqlMap resource="com/pe/manpower/sisplan/persistence/Usuario.xml"/>
+    <sqlMap resource="com/pe/manpower/sisplan/persistence/Menu.xml"/>
+    <sqlMap resource="com/pe/manpower/sisplan/persistence/Rol.xml"/>
+    <sqlMap resource="com/pe/manpower/sisplan/persistence/Companias.xml"/>
+    <sqlMap resource="com/pe/manpower/sisplan/persistence/Correntista.xml"/>
+</sqlMapConfig>
+
+

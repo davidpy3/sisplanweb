@@ -1,0 +1,41 @@
+	/*Formato de Tabla*/
+	table.ejecucion {
+		border: 1px solid #666;
+		font-family:Verdana, Geneva, Arial, Helvetica, sans-serif; 
+		width: 100%;
+		margin: 20px 0 20px 0;
+	}	
+	table.ejecucion td {
+		padding: 2px 4px 2px 4px;
+		text-align: left;
+		vertical-align: middle;
+		font-size: 9px;
+		font-family:Verdana, Geneva, Arial, Helvetica, sans-serif; 
+	}
+	table.ejecucion th{
+		padding: 2px 4px 2px 4px;
+	 	font-family:Verdana, Geneva, Arial, Helvetica, sans-serif; 		
+		font-size: 9px;
+		font-weight: bold;
+		color:#FFFFFF;
+		text-align: center;
+		background-color:1D75BD;
+		text-decoration: none;
+	}
+	
+	/*Cabecera de Tabla*/
+	table.ejecucion thead tr {
+	  	background-color:#69c;
+	  	color: WHITE;
+	}
+	
+	/*Colores intercalados*/
+	table.ejecucion tr.plan {
+		font-weight: bold; font-size:11px; background-color: #ACACAC;
+	}
+	table.ejecucion tr.programa {
+		font-size:10px; background-color: #f0f0f0;	  
+	}
+	table.ejecucion tr.operativo {
+		font-size:9px; background-color: #FFFFFF;
+	}

@@ -1,0 +1,173 @@
+/* CSS Document */
+
+/*Formato de imagenes*/
+img{ 
+	border:none;
+}
+
+/*Formato de Lineas*/
+hr {
+	height: 1px;
+	color: #000;
+	clear: both;		
+}
+
+
+/*-----------------*/
+/*Fomato de Tablas*/
+/*-----------------*/
+
+/*Formato de Tabla*/
+table.default {
+    border: 1px solid #666;
+    margin: 20px 0 20px 0;
+    color: black;	
+}
+
+/*DATOS VACIOS*/
+.empty{
+    font-family: Verdana, Arial, Helvetica, sans-serif;
+    font-size: 10px;
+}
+
+table.default th{
+    color: white;
+    font-family: Verdana, Arial, Helvetica, sans-serif;
+    font-size: 10px;	
+}
+
+
+/*Cabecera de Tabla*/
+table.default thead tr {
+  background-color: #EBF4FC;
+}
+
+/*Colores intercalados*/
+table.default tr.even {
+  font-family: Verdana, Arial, Helvetica, sans-serif;
+  font-size: 10px;  
+  background-color: #D5E9F9;
+  text-align: left;
+}
+table.default tr.odd {
+  font-family: Verdana, Arial, Helvetica, sans-serif;
+  font-size: 10px;  
+  background-color: #FAFCFE;
+  text-align: left;
+}
+
+/*Formato del Cuerpo de Tabla*/
+table.default tbody {	
+  overflow: scroll;
+}
+
+table.default tbody tr{	  
+  font-family: Verdana, Arial, Helvetica, sans-serif;
+  font-size: 10px;  
+}
+
+/*Titulo de la Tabla*/
+table.default caption {
+  background-color: #fc0;
+
+}
+
+/*Pie de Tabla*/
+table.default thead tr {
+  background-color: #0762A6;
+}
+
+/*------------------*/
+/*DisplayTags-------*/
+/*------------------*/
+
+/*Cabecera - Texto*/
+span.pagebanner {
+	background-color: #F2F9FD;
+	border: 1px dotted #999;
+	padding: 2px 4px 2px 4px;
+	width: 95%;
+	margin-top: 10px;
+	display:block;
+	border-bottom: none;
+	font:  menu;
+}
+
+/*Cabecera - Links*/
+span.pagelinks {	
+	background-color: #F2F9FD;
+	border: 1px dotted #999;
+	padding: 2px 4px 2px 4px;
+	width: 95%;
+	display:block;
+	border-top: none;
+	margin-bottom: -5px;
+	font:  menu;
+}
+
+/*Pie - Export*/
+div.exportlinks {
+	background-color: #F2F9FD;
+	border: 1px dotted #999;
+	padding: 2px 4px 2px 4px;
+	margin: -10px 0 10px 0;
+	width: 95%;
+	font:  menu;
+}
+span.export {
+	padding: 0 4px 1px 20px;
+	display:inline; display:inline-block;
+	cursor: pointer;
+}
+
+
+/*Estilo TH*/
+th.sortable a {
+        font-size: 10px;
+        font-family: Verdana, Arial, Helvetica, sans-serif; 
+        background-repeat: no-repeat;
+	background-position: right;
+	display: block;
+	width: 100%;
+}
+th.sortable a {
+	background-image: url(img/arrow_off.png);
+}
+th.sortable a, th.sortable a:visited, th.sortable a:hover { 
+	text-decoration:none; 
+	color: white;
+}
+th.sortable a:hover {
+	text-decoration: underline;
+}
+
+table.default th.sorted {
+    background-color: orange;
+}
+
+/*Estilos <a> Cabecera - Pie*/
+span.pagelinks a, span.pagelinks a:visited, span.pagelinks a:hover, 
+div.exportlinks a, div.exportlinks a:visited, div.exportlinks a:hover { 
+	color:#666; text-decoration:none; 
+}
+div.exportlinks a:hover, span.pagelinks a:hover {
+	text-decoration: underline;
+}
+
+/*Imagenes*/
+span.excel {
+	background-repeat:no-repeat;
+	background-image: url(ico_file_excel.png);
+}
+span.csv {
+	background-repeat:no-repeat;
+	background-image: url(ico_file_csv.png);
+}
+span.xml {
+	background-repeat:no-repeat;
+	background-image: url(ico_file_xml.png);
+}
+span.pdf {
+	background-repeat:no-repeat;
+	background-image: url(ico_file_pdf.png);
+}

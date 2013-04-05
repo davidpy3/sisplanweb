@@ -1,0 +1,127 @@
+.ditch-tab-skin-wireframe .ditchnet-tab-container {
+	MARGIN: 10px; BORDER-LEFT: gray 1px solid; BORDER-BOTTOM: gray 1px solid
+}
+.ditch-tab-skin-wireframe .ditch-tab-wrap {
+	
+}
+.ditch-tab-skin-wireframe .ditch-tab {
+	BORDER-RIGHT: gray 1px solid; PADDING-RIGHT: 10px; BORDER-TOP: gray 1px solid; PADDING-LEFT: 10px; FLOAT: left; PADDING-BOTTOM: 2px; CURSOR: pointer; PADDING-TOP: 2px
+}
+.ditch-tab-skin-wireframe .ditch-tab-wrap .ditch-unfocused {
+	COLOR: gray; BACKGROUND-COLOR: white
+}
+.ditch-tab-skin-wireframe .ditch-tab-wrap .ditch-focused {
+	COLOR: black; BACKGROUND-COLOR: silver
+}
+.ditch-tab-skin-wireframe .ditch-tab-pane-wrap {
+	BORDER-RIGHT: gray 1px solid; PADDING-RIGHT: 8px; BORDER-TOP: gray 1px solid; PADDING-LEFT: 8px; PADDING-BOTTOM: 8px; PADDING-TOP: 8px
+}
+.ditch-tab-skin-wireframe .ditch-tab-pane {
+	
+}
+.ditch-tab-skin-wireframe BR.ditch-clear {
+	CLEAR: both
+}
+.ditch-tab-skin-invisible .ditchnet-tab-container {
+	BORDER-TOP-WIDTH: 0px; BORDER-LEFT-WIDTH: 0px; BORDER-BOTTOM-WIDTH: 0px; MARGIN: 10px; BORDER-RIGHT-WIDTH: 0px
+}
+.ditch-tab-skin-invisible .ditch-tab-wrap {
+	BORDER-TOP-WIDTH: 0px; DISPLAY: none; BORDER-LEFT-WIDTH: 0px; BORDER-BOTTOM-WIDTH: 0px; BORDER-RIGHT-WIDTH: 0px
+}
+.ditch-tab-skin-invisible .ditch-tab {
+	BORDER-TOP-WIDTH: 0px; DISPLAY: none; BORDER-LEFT-WIDTH: 0px; BORDER-BOTTOM-WIDTH: 0px; BORDER-RIGHT-WIDTH: 0px
+}
+.ditch-tab-skin-invisible .ditch-tab-wrap .ditch-unfocused {
+	BORDER-TOP-WIDTH: 0px; BORDER-LEFT-WIDTH: 0px; BORDER-BOTTOM-WIDTH: 0px; BORDER-RIGHT-WIDTH: 0px
+}
+.ditch-tab-skin-invisible .ditch-tab-wrap .ditch-focused {
+	BORDER-TOP-WIDTH: 0px; BORDER-LEFT-WIDTH: 0px; BORDER-BOTTOM-WIDTH: 0px; BORDER-RIGHT-WIDTH: 0px
+}
+.ditch-tab-skin-invisible .ditch-tab-pane-wrap {
+	BORDER-TOP-WIDTH: 0px; PADDING-RIGHT: 8px; PADDING-LEFT: 8px; BORDER-LEFT-WIDTH: 0px; BORDER-BOTTOM-WIDTH: 0px; PADDING-BOTTOM: 8px; PADDING-TOP: 8px; BORDER-RIGHT-WIDTH: 0px
+}
+.ditch-tab-skin-invisible .ditch-tab-pane {
+	BORDER-TOP-WIDTH: 0px; BORDER-LEFT-WIDTH: 0px; BORDER-BOTTOM-WIDTH: 0px; BORDER-RIGHT-WIDTH: 0px
+}
+.ditch-tab-skin-invisible BR.ditch-clear {
+	CLEAR: both
+}
+.ditchnet-tab-container {
+	MARGIN: 10px
+}
+.ditch-tab-wrap {
+	Z-INDEX: 10; FONT: 12px "Lucida Grande",LucidaGrande,Verdana,sans-serif; POSITION: relative
+}
+.ditch-tab {
+	PADDING-RIGHT: 20px; PADDING-LEFT: 20px; FLOAT: left; PADDING-BOTTOM: 2px; MARGIN: 0px 1px -1px 0px; FONT: 12px "Lucida Grande",LucidaGrande,Verdana,sans-serif; CURSOR: pointer; PADDING-TOP: 2px; POSITION: relative; TEXT-ALIGN: center
+}
+.ditch-tab-bg-left {
+	LEFT: 0px; 
+	WIDTH: 10px; 
+	POSITION: absolute; 
+	TOP: 0px; 
+	HEIGHT: 18px
+}
+UNKNOWN {
+	HEIGHT: 18px
+}
+.ditch-unfocused {
+	BACKGROUND: url(default_tab_bg_right.gif) no-repeat 100% 0px; COLOR: #999; BORDER-BOTTOM: silver 1px solid
+}
+.ditch-focused {
+	BACKGROUND: url(default_tab_bg_white_right.gif) no-repeat 100% 0px; BORDER-BOTTOM: white 1px solid
+}
+.ditch-unfocused .ditch-tab-bg-left {
+	BACKGROUND: url(default_tab_bg_left.gif) no-repeat 0px 0px
+}
+.ditch-focused .ditch-tab-bg-left {
+	BACKGROUND: url(default_tab_bg_white_left.gif) no-repeat 0px 0px
+}
+.ditch-tab A:link {
+	/*COLOR: black; TEXT-DECORATION: none*/
+
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 11px;
+	color: #695AA3;
+	text-decoration: none;	
+}
+.ditch-tab A:visited {
+	/*COLOR: black; TEXT-DECORATION: none*/
+
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 11px;
+	color: #695AA3;
+	text-decoration: none;	
+}
+.ditch-tab-wrap .ditch-unfocused A:link {
+	/*COLOR: silver*/ 
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 11px;
+	color: #628AC6;
+	text-decoration: none;
+}
+.ditch-tab-wrap .ditch-unfocused A:visited {
+	/*COLOR: silver*/
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 11px;
+	color: #628AC6;
+	text-decoration: none;
+}
+.ditch-tab-pane-wrap {
+	width:100%;
+	BORDER-RIGHT: silver 1px solid; 
+	PADDING-RIGHT: 2px; 
+	BORDER-TOP: silver 1px solid; 
+	PADDING-LEFT: 2px; 
+	Z-INDEX: 9; 
+	PADDING-BOTTOM: 8px; BORDER-LEFT: silver 1px solid; 
+	PADDING-TOP: 8px; 
+	BORDER-BOTTOM: silver 1px solid; 
+	POSITION: relative
+}
+.ditch-tab-pane {
+	
+}
+BR.ditch-clear {
+	CLEAR: both
+}

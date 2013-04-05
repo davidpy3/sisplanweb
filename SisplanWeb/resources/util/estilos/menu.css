@@ -1,0 +1,36 @@
+  .menu { 
+    font-weight: bold;
+    font-family: Verdana, Arial, Helvetica, sans-serif;
+    text-decoration: none; 
+    color: #A87329; 
+    font-size: 13px; 
+    cursor: pointer; 
+    margin: 1px 0; 
+  }
+  
+  .submenu { 
+    font-family: Verdana, Arial, Helvetica, sans-serif;
+    display: block; 
+    color: #303b74; 
+    font-size: 11px; 
+    background: #E1ECFC; 
+    text-decoration: none; 
+    padding-left: 2px;  
+    border: 1px solid #E1ECFC; 
+    margin-left: 5px; 
+  }
+
+  .submenu:hover { 
+    border: 1px solid #E2A503; 
+    background: #FEEBBA; 
+  }
+
+
+  A.link { text-decoration: none; COLOR: #303d7a; }
+  A:hover.link { text-decoration: underline; color: red; }
+
+  A.link1 { text-decoration: none; COLOR: #A87329; }
+  A:hover.link1 { text-decoration: none; color: red; }
+
+  A.link2 { text-decoration: none; COLOR: blue; }
+  A:hover.link2 { text-decoration: underline; color: red; }

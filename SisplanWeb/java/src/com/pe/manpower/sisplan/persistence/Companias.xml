@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE sqlMap PUBLIC "-//iBATIS.com//DTD SQL Map 2.0//EN" "http://www.ibatis.com/dtd/sql-map-2.dtd">
+<sqlMap namespace="Companias">
+
+    <typeAlias alias="CompaniaObject" type="com.pe.manpower.sisplan.to.Compania"/>
+
+    <cacheModel id="CompaniasCache" type="MEMORY" readOnly="false" serialize="true">
+        <flushInterval hours="24"/>
+    </cacheModel>
+
+    <resultMap id="companiasResult" class="CompaniaObject">
+        <result property="codigo" column="codigo"/>
+        <result property="nombre" column="nombre"/>
+    </resultMap>
+
+    <!-- hsql db used for this example capitalizes col names
+         so Map will have them as all caps -->
+    <select id="getCompanias" resultClass="com.pe.manpower.sisplan.to.Compania" cacheModel="CompaniasCache">
+        select codigo,dscrpcion nombre
+        from companias
+        order by 2
+    </select>
+
+    <select id="getCompania" resultMap="companiasResult" parameterClass="java.lang.Integer">
+        select codigo,dscrpcion nombre
+        from companias
+        where codigo=#value#
+    </select>
+
+    <!--update id="update" parameterClass="EmployeeObject">
+        UPDATE employee
+        SET
+            firstname = #firstName#,
+            lastname = #lastName#,
+            age = #age#,
+            departmentid = #departmentId#
+        WHERE employeeid = #employeeId#
+    </update>
+
+    <insert id="insert" parameterClass="EmployeeObject">
+        INSERT INTO employee ( employeeid, firstname, lastname, age, departmentid )
+        VALUES ( null, #firstName#, #lastName#, #age#, #departmentId# )
+    </insert>
+
+    <delete id="delete" parameterClass="java.lang.Integer">
+        DELETE FROM employee WHERE employeeid = #value#
+    </delete-->
+</sqlMap>

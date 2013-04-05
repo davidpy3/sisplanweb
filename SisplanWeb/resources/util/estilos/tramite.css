@@ -1,0 +1,348 @@
+/*--------------------------------------------------------*/
+#master { position: absolute; width: 774px; margin-left: -387px; margin-top: 0px; left: 50%; }
+
+/* Estilos globales*/
+body {
+	margin-left: 0px;
+	margin-top: 0px;
+	margin-right: 0px;
+	margin-bottom: 0px;
+	background-color: #F7FAFD;
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 10px;	
+	color: #333333;
+}
+
+/***************************************************************/
+/*-- CONTENIDOS --*/
+/***************************************************************/
+/*Estilo para el contenido general*/
+.contenido {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 10px;	
+	color: #333333;
+}
+
+/*Estilo para el contenido general en NEGRITA*/
+.contenido_negrita {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 10px;
+	font-weight: bold;
+	color: #333333;
+}
+
+/*Estilo para el contenido mas claro; para el pie de pagina*/
+.contenido_especial {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 10px;
+	color: #5B8AC4;
+}
+
+
+/***************************************************************/
+/*-- TABLA BUSQUEDAS --*/
+/* ************************************************************ */
+
+table.busqueda {
+    border: 1px solid #666;
+    margin: 20px 0 20px 0;
+    color: black;
+    background-color: #ffffff;	
+}
+
+table.busqueda th{
+    font-family: Verdana;
+    font-size: 9px;
+    font-weight: bold;
+    color: #FFFFFF;
+    border-width: thin;	
+    text-align: center;
+    background-color: #1D75BD;
+}
+
+table.busqueda td{
+    BACKGROUND-COLOR: #F0F8FB;
+    COLOR: BLACK;
+    FONT-FAMILY: Tahoma;
+    FONT-SIZE: 7.5pt;
+    FONT-WEIGHT: bold;	
+}
+
+/***************************************************************/
+/*-- TABLA SUBBUSQUEDAS --*/
+/* ************************************************************ */
+
+table.subbusqueda {
+    border: 1px solid #666;
+    margin: 20px 0 20px 0;
+    color: black;
+    background-color: #ffffff;	
+}
+
+table.subbusqueda th{
+    font-family: Verdana;
+    font-size: 9px;
+    font-weight: bold;
+    color: #FFFFFF;
+    border-width: thin;	
+    text-align: center;
+    background-color: #EAAF44;
+}
+
+table.subbusqueda tr.even{
+    BACKGROUND-COLOR: #FDF4D9;
+    COLOR: BLACK;
+    FONT-FAMILY: Tahoma;
+    FONT-SIZE: 7.5pt;    
+}
+
+table.subbusqueda tr.odd{
+    BACKGROUND-COLOR: #ffffff;
+    COLOR: BLACK;
+    FONT-FAMILY: Tahoma;
+    FONT-SIZE: 7.5pt;    
+}
+
+/***************************************************************/
+/*-- TITULOS BUSQUEDA--*/
+/* ************************************************************ */
+.cabecera_busqueda{
+    font-family: Verdana;
+    font-size: 9px;
+    font-weight: bold;
+    color: #FFFFFF;
+    border-width: thin;	    
+    background-color: #1D75BD;
+}
+
+
+/***************************************************************/
+/*-- TITULOS --*/
+/* ************************************************************ */
+.titulo_1 {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 20px;
+	color: #333333;
+	font-weight: bold;
+}
+.titulo_2 {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 18px;
+	color: #333333;
+	font-weight: bold;
+}
+.titulo_3 {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 16px;
+	color: #333333;
+	font-weight: bold;
+}
+.titulo_4 {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 14px;
+	color: #333333;
+	font-weight: bold;
+}
+.titulo_5 {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	color: #333333;
+	font-weight: bold;
+}
+
+
+
+
+/***************************************************************/
+/*-- LINK  --*/
+/* ************************************************************ */
+.titulo_opciones {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 10px;
+	color: #003399;
+	font-weight: bold;
+}
+
+A.link{ 
+	color: #003399;
+	font-size: 10px;
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	text-decoration :none;
+}
+A.link:active {  
+	text-decoration :none;
+	color:#003399;
+}
+A.link:hover {  
+	text-decoration :none;
+	color: #003399;
+}
+A.link:visited {  
+	text-decoration :none;
+	color:#003399;
+	}
+A.link:visited:hover { 
+	text-decoration :none;
+	color: #003399;
+}
+
+
+
+/***************************************************************/
+/*-- INPUT --*/
+/* ************************************************************ */
+/*Formato de los Botones*/
+.button a{
+	background-color: #346CAB;
+	color: #ffffff;
+	text-decoration: none;
+	border: 1px solid #346CAB;
+	padding: 2px 8px 0 3px; 
+	font-weight: bold;
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 10px;
+}
+.button a:hover {background-color: #AED3EE; border:1px solid #346CAB; color:#346CAB;}
+
+
+
+
+/***************************************************************/
+/*-- INPUT --*/
+/* ************************************************************ */
+/*Formao del los input*/
+.cajas_texto{
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 10px;
+	text-decoration: none;
+	color: #333333;
+	background-color: #ffffff;
+}
+/*Formao del los input _ 1*/
+.cajas_texto_obli{
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 10px;
+	text-decoration: none;
+	color: #333333;
+	background-color: #FDFFD5;
+}
+
+
+
+
+
+
+
+/***************************************************************/
+/*-- LINKS --*/
+/* ************************************************************ */
+A.contenido_link{ 	
+        font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 10px;	
+	color: #333333;
+        text-decoration :none;
+}
+A.contenido_link:active {  
+	text-decoration :underline;
+	color:#333333;
+}
+A.contenido_link:hover {  
+	text-decoration :underline;
+	color: #333333;
+}
+A.contenido_link:visited {  
+	text-decoration :none;
+	color:#333333;
+	}
+A.contenido_link:visited:hover { 
+	text-decoration :underline;
+	color: #333333;
+}
+
+
+
+/***************************************************************/
+/*-- TABLA BORDE --*/
+/* ************************************************************ */
+.tabla_borde {
+    border: 1px solid #85B5E0;
+    color: black;
+}
+
+
+
+/***************************************************************/
+/*-- MENU --*/
+/* ************************************************************ */
+.titulo_menu {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	color: #003399;
+	font-weight: bold;
+}
+
+
+/*--------------------------------------------*/
+/*--------------------------------------------*/
+
+/*--------------------------------------------*/
+/*--------------------------------------------*/
+  .hmenu { 
+    /*font-weight: bold;*/
+    font-family: Verdana, Arial, Helvetica, sans-serif;
+    text-decoration: none; 
+    color: #333333; 
+    font-size: 10px; 
+    cursor: pointer; 
+    margin: 1px 0; 
+    background:#F7F8FB;
+  }
+  
+  .hmenu:hover {     
+    background: #FEEBBA; 
+  }
+  
+/*--------------------------------------------*/
+/*--------------------------------------------*/
+
+  .hsubmenu { 
+    font-family: Verdana, Arial, Helvetica, sans-serif;    
+    color: #333333;  
+    font-size: 11px;     
+    text-decoration: none; 
+    padding-left: 2px;  
+    margin-left: 2px; 
+	cursor: pointer;
+  }
+
+  .hsubmenu:hover { 
+    border: 1px solid #E2A503; 
+    background: #FEEBBA; 	
+	cursor: pointer;
+  }
+
+  .tablesubmenu{
+        border: 1px solid #333333; 
+	border-bottom: 2px solid #666666; 
+	border-right: 2px solid #666666; 
+        background:#F7F8FB;
+  }
+
+/*--------------------------------------------*/
+/*--------------------------------------------*/
+
+  .hmenulink { 
+    /*font-weight: bold;*/
+    font-family: Verdana, Arial, Helvetica, sans-serif;
+    text-decoration: none;    
+    font-size: 10px; 
+    color: #333333;  
+  }
+  
+  .hmenulink:hover { 
+	text-decoration: none; 
+	color: #333333;  
+  }
+  
+  
+  

@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+
+<!DOCTYPE struts-config PUBLIC
+        "-//Apache Software Foundation//DTD Struts Configuration 1.2//EN"
+        "http://jakarta.apache.org/struts/dtds/struts-config_1_2.dtd">
+
+<struts-config>
+
+    <form-beans>
+         <form-bean name="LoginForm" type="com.pe.manpower.sisplan.form.LoginForm"/>
+        <form-bean name="mvmntosForm" type="com.pe.manpower.sisplan.form.MvmntosCrdtoForm"/>
+        <form-bean name="MenuForm" type="com.pe.manpower.sisplan.form.MenuForm"/>
+        <form-bean name="RolForm" type="com.pe.manpower.sisplan.form.RolForm"/>
+    </form-beans>
+
+    <action-mappings>
+         <action
+                path="/loginUsuario"
+                name="LoginForm"
+                type="org.springframework.web.struts.DelegatingActionProxy"
+                scope="request"
+                parameter="dispatch"
+                input="/login.jsp">
+            <forward name="success" path="/index.jsp" redirect="true"/>
+            <forward name="login" path="/login.jsp" redirect="false"/>
+            <forward name="changepwdok" path="/changepwdok.jsp"/>
+            <forward name="changepwd" path="/changepwd.jsp"/>
+        </action>
+        <action
+                path="/mvmntosCrdtoProcess"
+                name="mvmntosForm"
+                type="org.springframework.web.struts.DelegatingActionProxy"
+                scope="request"
+                parameter="dispatch">
+            <forward name="success" path="/cxc.jsp"/>
+            <forward name="params" path="/pcxc.jsp"/>
+        </action>
+
+         <action
+                path="/menuSetUp"
+                name="MenuForm"
+                type="org.springframework.web.struts.DelegatingActionProxy"
+                scope="request"
+                parameter="dispatch">
+            <forward name="success" path="/menuForm.jsp"/>
+        </action>
+        
+        <action
+                path="/menuProcess"
+                name="MenuForm"
+                type="org.springframework.web.struts.DelegatingActionProxy"
+                scope="request"
+                parameter="dispatch">
+            <forward name="failure" path="/menuForm.jsp"/>
+            <forward name="success" path="/menus.jsp"/>
+        </action>
+        
+         <action
+                path="/rolSetUp"
+                name="RolForm"
+                type="org.springframework.web.struts.DelegatingActionProxy"
+                scope="request"
+                parameter="dispatch">
+            <forward name="success" path="/rolForm.jsp"/>
+        </action>
+        
+        <action
+                path="/rolProcess"
+                name="RolForm"
+                type="org.springframework.web.struts.DelegatingActionProxy"
+                scope="request"
+                parameter="dispatch">
+            <forward name="failure" path="/rolForm.jsp"/>
+            <forward name="success" path="/roles.jsp"/>
+            <forward name="menurol" path="/menurol.jsp"/>
+            <forward name="usuariorol" path="/usuariorol.jsp"/>
+            <forward name="pmenurol" path="/pmenurol.jsp"/>
+            <forward name="pusuariorol" path="/pusuariorol.jsp"/>
+        </action>
+
+    </action-mappings>
+
+    <message-resources parameter="MessageResources" null="false"/>
+
+    <plug-in className="org.springframework.web.struts.ContextLoaderPlugIn">
+        <set-property
+                property="contextConfigLocation"
+                value="/WEB-INF/classes/spring.xml"/>
+    </plug-in>
+
+</struts-config>
+
