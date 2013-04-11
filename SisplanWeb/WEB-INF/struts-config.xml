@@ -11,6 +11,7 @@
         <form-bean name="mvmntosForm" type="com.pe.manpower.sisplan.form.MvmntosCrdtoForm"/>
         <form-bean name="MenuForm" type="com.pe.manpower.sisplan.form.MenuForm"/>
         <form-bean name="RolForm" type="com.pe.manpower.sisplan.form.RolForm"/>
+        <form-bean name="repControllerForm" type="com.pe.manpower.sisplan.form.RepControllerForm"/>
     </form-beans>
 
     <action-mappings>
@@ -77,7 +78,19 @@
             <forward name="pmenurol" path="/pmenurol.jsp"/>
             <forward name="pusuariorol" path="/pusuariorol.jsp"/>
         </action>
-
+        
+        <action
+                path="/repControllerProcess"
+                name="repControllerForm"
+                type="org.springframework.web.struts.DelegatingActionProxy"
+                scope="request"
+                parameter="dispatch">
+            <forward name="success" path="/IngresosPorMes.jsp"/>
+            <forward name="params" path="/pIngresosPorMes.jsp"/>
+            <forward name="CesesxMes" path="/CesesPorMes.jsp"/>
+            <forward name="pCesesxMes" path="/pCesesPorMes.jsp"/>
+        </action>
+        
     </action-mappings>
 
     <message-resources parameter="MessageResources" null="false"/>

@@ -28,7 +28,7 @@
     <select id="getAll" resultClass="java.util.HashMap" cacheModel="menuCache">
         SELECT m.menuid,m.menutipo,lpad(' ',2*(level-1)) || menutitle menutitle,m.estado,m.menuorden,m.menuaction,m.parentid
         FROM menu m 
-        START WITH  m.parentid IS  NULL 
+        START WITH  m.parentid = 0 
         CONNECT BY  PRIOR m.menuid = m.parentid
         ORDER SIBLINGS BY m.menuorden
     </select>

@@ -15,6 +15,7 @@
     <sqlMap resource="com/pe/manpower/sisplan/persistence/Rol.xml"/>
     <sqlMap resource="com/pe/manpower/sisplan/persistence/Companias.xml"/>
     <sqlMap resource="com/pe/manpower/sisplan/persistence/Correntista.xml"/>
+    <sqlMap resource="com/pe/manpower/sisplan/persistence/RepController.xml"/>
 </sqlMapConfig>
 
 
