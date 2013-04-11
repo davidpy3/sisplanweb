@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE sqlMap PUBLIC "-//iBATIS.com//DTD SQL Map 2.0//EN" "http://www.ibatis.com/dtd/sql-map-2.dtd">
+<sqlMap namespace="RepController">
+
+    <typeAlias alias="ResumenObject" type="com.pe.manpower.sisplan.to.ObjResumen"/>
+
+       
+    <resultMap id="resultResumen" class="ResumenObject">
+        
+     <result column="NO_CIA" property="no_cia" jdbcType="VARCHAR" javaType="string" />
+     <result column="CIA_DESC" property="cia_desc" jdbcType="VARCHAR" javaType="string" />
+     <result column="ANO" property="ano" jdbcType="NUMBER" javaType="Integer" />
+     <result column="MES_DESC" property="mes_desc" jdbcType="VARCHAR" javaType="string" />
+     <result column="MES" property="mes" jdbcType="NUMBER" javaType="Integer" />
+     <result column="TOTAL" property="total" jdbcType="NUMBER" javaType="long" />
+        
+     </resultMap>
+
+    <parameterMap id="paramsResumen" class="java.util.Map">
+       <parameter property="pNoCia" javaType="string" mode="IN" jdbcType="VARCHAR"/>
+       <parameter property="pAno" javaType="java.lang.Integer" mode="IN" jdbcType="NUMBER"/>
+       <parameter property="pResult" javaType="java.sql.ResultSet" mode="OUT" jdbcType="ORACLECURSOR" resultMap="resultResumen"  />
+    </parameterMap>
+    
+    <select id="getYears" resultClass="java.lang.Integer" >
+       select to_char(sysdate,'YYYY') - (rownum - 1) years
+       from menu
+       where (to_char(sysdate,'YYYY') - rownum ) > 2005
+    </select>
+    
+    <procedure id="buscarIngresosPorMes"  parameterMap="paramsResumen">
+        { call SISWEB.PKG_REP_CONTROLLER.PRC_INGRESOS_X_MES(?,?,?) }
+    </procedure>
+    
+    <procedure id="buscarCesesPorMes"  parameterMap="paramsResumen">
+        { call SISWEB.PKG_REP_CONTROLLER.PRC_CESES_X_MES(?,?,?) }
+    </procedure>
+    
+</sqlMap>

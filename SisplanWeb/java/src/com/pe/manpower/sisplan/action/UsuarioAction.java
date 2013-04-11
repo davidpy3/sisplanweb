@@ -69,6 +69,7 @@ public class UsuarioAction extends DispatchAction {
           usr.setLogin(loginfrm.getLogin());
           // Inicialisar variables generales
            HttpSession sesion = request.getSession();
+           
          
            List<Menu> listMenu=menuService.mostrarMenu(usr);
          

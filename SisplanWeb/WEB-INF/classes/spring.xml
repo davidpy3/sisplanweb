@@ -97,7 +97,21 @@
     <bean name="/mvmntosCrdtoProcess" class="com.pe.manpower.sisplan.action.MvmntosCrdtoAction">
         <constructor-arg index="0" ref="mvmntosCrdtoService"/>
      </bean>
+    <!-- Reportes Controller  -->
+    <bean id="repControllerDao" class="com.pe.manpower.sisplan.persistence.impl.RepControllerImplDAO">
+        <property name="sqlMapClient">
+            <ref bean="sqlMapClient"/>
+        </property>
+    </bean>
+
+    <bean id="repControllerService" class="com.pe.manpower.sisplan.service.impl.RepControllerImplService">
+        <constructor-arg index="0" ref="repControllerDao"/>
+    </bean>
     
+    <bean name="/repControllerProcess" class="com.pe.manpower.sisplan.action.RepControllerAction">
+        <constructor-arg index="0" ref="repControllerService"/>
+        <constructor-arg index="1" ref="mvmntosCrdtoService"/>
+     </bean> 
 
 
 </beans>
