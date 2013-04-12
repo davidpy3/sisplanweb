@@ -89,6 +89,10 @@
             <forward name="params" path="/pIngresosPorMes.jsp"/>
             <forward name="CesesxMes" path="/CesesPorMes.jsp"/>
             <forward name="pCesesxMes" path="/pCesesPorMes.jsp"/>
+            <forward name="CtaBalancexMes" path="/CtaBalancePorMes.jsp"/>
+            <forward name="pCtaBalancexMes" path="/pCtaBalancePorMes.jsp"/>
+            <forward name="CtaGastoxMes" path="/CtaGastoPorMes.jsp"/>
+            <forward name="pCtaGastoxMes" path="/pCtaGastoPorMes.jsp"/>
         </action>
         
     </action-mappings>

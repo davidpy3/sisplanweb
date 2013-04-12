@@ -12,7 +12,17 @@ public class RepControllerForm extends org.apache.struts.action.ActionForm{
     
     private String no_cia;
     private String ano;
+    private String mes;
 
+    public String getMes() {
+        return mes;
+    }
+
+    public void setMes(String mes) {
+        this.mes = mes;
+    }
+
+    
     public String getNo_cia() {
         return no_cia;
     }

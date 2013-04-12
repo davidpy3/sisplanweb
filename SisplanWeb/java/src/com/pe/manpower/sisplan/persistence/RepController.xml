@@ -22,6 +22,25 @@
        <parameter property="pResult" javaType="java.sql.ResultSet" mode="OUT" jdbcType="ORACLECURSOR" resultMap="resultResumen"  />
     </parameterMap>
     
+    <resultMap id="resultCtaBalanceGasto" class="ResumenObject">
+        
+     <result column="COD_CONCEPTO" property="cod_concepto" jdbcType="VARCHAR" javaType="string" />
+     <result column="DESC_CONCEPTO" property="desc_concepto" jdbcType="VARCHAR" javaType="string" />
+     <result column="CUENTA" property="cuenta" jdbcType="VARCHAR" javaType="string" />
+     <result column="COD_CLIE" property="cod_clie" jdbcType="VARCHAR" javaType="string" />
+     <result column="DESC_CLIE" property="desc_clie" jdbcType="VARCHAR" javaType="string" />
+     <result column="COD_CCOSTO" property="cod_ccosto" jdbcType="VARCHAR" javaType="string" />
+     <result column="DESC_CCOSTO" property="desc_ccosto" jdbcType="VARCHAR" javaType="string" />
+     <result column="MONTO" property="monto" jdbcType="NUMBER" javaType="double" />
+        
+     </resultMap>
+      <parameterMap id="paramsCtaBalanceGasto" class="java.util.Map">
+       <parameter property="pNoCia" javaType="string" mode="IN" jdbcType="VARCHAR"/>
+       <parameter property="pAno" javaType="java.lang.Integer" mode="IN" jdbcType="NUMBER"/>
+       <parameter property="pMes" javaType="java.lang.Integer" mode="IN" jdbcType="NUMBER"/>
+       <parameter property="pResult" javaType="java.sql.ResultSet" mode="OUT" jdbcType="ORACLECURSOR" resultMap="resultCtaBalanceGasto"  />
+    </parameterMap>
+    
     <select id="getYears" resultClass="java.lang.Integer" >
        select to_char(sysdate,'YYYY') - (rownum - 1) years
        from menu
@@ -34,6 +53,14 @@
     
     <procedure id="buscarCesesPorMes"  parameterMap="paramsResumen">
         { call SISWEB.PKG_REP_CONTROLLER.PRC_CESES_X_MES(?,?,?) }
+    </procedure>
+    
+    <procedure id="buscarCtaBalancePorMes"  parameterMap="paramsCtaBalanceGasto">
+        { call SISWEB.PKG_REP_CONTROLLER.PRC_CTABALANCE_X_MES(?,?,?,?) }
+    </procedure>
+    
+     <procedure id="buscarCtaGastoPorMes"  parameterMap="paramsCtaBalanceGasto">
+        { call SISWEB.PKG_REP_CONTROLLER.PRC_CTAGASTO_X_MES(?,?,?,?) }
     </procedure>
     
 </sqlMap>

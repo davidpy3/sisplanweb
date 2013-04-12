@@ -5,6 +5,7 @@
 package com.pe.manpower.sisplan.action;
 
 import com.pe.manpower.sisplan.Constants;
+import com.pe.manpower.sisplan.Util;
 import com.pe.manpower.sisplan.form.RepControllerForm;
 import com.pe.manpower.sisplan.service.MvmntosCrdtoService;
 import com.pe.manpower.sisplan.service.RepControllerService;
@@ -101,4 +102,70 @@ public class RepControllerAction extends DispatchAction{
    
      return mapping.findForward("pCesesxMes");
     }
+     public ActionForward getCtaBalancePorMes(ActionMapping mapping, ActionForm form, HttpServletRequest request, HttpServletResponse response) throws Exception {
+        logger.debug("getCtaBalancePorMes");
+        setDataCta(1,form, request);
+        return mapping.findForward("CtaBalancexMes");
+        
+     }
+    
+     public ActionForward getCtaGastoPorMes(ActionMapping mapping, ActionForm form, HttpServletRequest request, HttpServletResponse response) throws Exception {
+        logger.debug("getCtaGastoPorMes");
+        setDataCta(2,form, request);
+        return mapping.findForward("CtaGastoxMes");
+        
+     }
+       
+     public ActionForward showParamsCtaBalancePorMes(ActionMapping mapping, ActionForm form, HttpServletRequest request, HttpServletResponse response) throws Exception{
+        logger.debug("showParamsCtaBalancePorMes");
+        
+        List listaCias=repService.getCompaniasSisplan();
+        List years=repService.getYears();
+        
+        request.setAttribute("cias",listaCias);
+        request.setAttribute("years",years);
+   
+     return mapping.findForward("pCtaBalancexMes");
+    }
+         
+     public ActionForward showParamsCtaGastoPorMes(ActionMapping mapping, ActionForm form, HttpServletRequest request, HttpServletResponse response) throws Exception{
+        logger.debug("showParamsCtaGastoPorMes");
+        
+        List listaCias=repService.getCompaniasSisplan();
+        List years=repService.getYears();
+        
+        request.setAttribute("cias",listaCias);
+        request.setAttribute("years",years);
+   
+     return mapping.findForward("pCtaGastoxMes");
+    }
+     
+     public void setDataCta(int tipo,ActionForm form, HttpServletRequest request)throws Exception{
+        
+        List listaresumen;
+        RepControllerForm repForm=(RepControllerForm) form;
+        ObjResumen resumen=new ObjResumen();
+        resumen.setNo_cia(repForm.getNo_cia());
+        resumen.setAno(Integer.parseInt(repForm.getAno()));
+        resumen.setMes(Integer.parseInt(repForm.getMes()));
+        logger.debug("getCtaTipo "+tipo+" -> no_cia :"+resumen.getNo_cia());
+        logger.debug("getCtaTipo "+tipo+" -> Ano :"+resumen.getAno());
+        logger.debug("getCtaTipo "+tipo+" -> Mes :"+resumen.getMes());
+        if(tipo==1){
+          listaresumen=repService.getCtaBalancePorMes(resumen);
+          request.setAttribute("CtaBalancePorMes",listaresumen);
+        }else{
+          listaresumen=repService.getCtaGastoPorMes(resumen);
+          request.setAttribute("CtaGastoPorMes",listaresumen);
+        }
+        
+        // Mostrar parametros 
+        Compania cia=repService.getCompaniaSisplan(Integer.parseInt(resumen.getNo_cia()));
+        HashMap params=new HashMap();
+        params.put("Compania",cia.getNombre());
+        params.put("Ano",resumen.getAno());
+        params.put("Mes",Util.getMesNombre(resumen.getMes()));
+        request.setAttribute("params",params); 
+              
+     }
 }
