@@ -15,7 +15,79 @@ public class ObjResumen {
     private Integer ano;
     private long    total;
     private String  cia_desc;
+    private String  cod_concepto;
+    private String  desc_concepto;
+    private String  cuenta;
+    private String  cod_clie;
+    private String  desc_clie;
+    private String  cod_ccosto;
+    private String  desc_ccosto;
+    private double  monto;
 
+    public String getCod_concepto() {
+        return cod_concepto;
+    }
+
+    public void setCod_concepto(String cod_concepto) {
+        this.cod_concepto = cod_concepto;
+    }
+
+    public String getDesc_concepto() {
+        return desc_concepto;
+    }
+
+    public void setDesc_concepto(String desc_concepto) {
+        this.desc_concepto = desc_concepto;
+    }
+
+    public String getCuenta() {
+        return cuenta;
+    }
+
+    public void setCuenta(String cuenta) {
+        this.cuenta = cuenta;
+    }
+
+    public String getCod_clie() {
+        return cod_clie;
+    }
+
+    public void setCod_clie(String cod_clie) {
+        this.cod_clie = cod_clie;
+    }
+
+    public String getDesc_clie() {
+        return desc_clie;
+    }
+
+    public void setDesc_clie(String desc_clie) {
+        this.desc_clie = desc_clie;
+    }
+
+    public String getCod_ccosto() {
+        return cod_ccosto;
+    }
+
+    public void setCod_ccosto(String cod_ccosto) {
+        this.cod_ccosto = cod_ccosto;
+    }
+
+    public String getDesc_ccosto() {
+        return desc_ccosto;
+    }
+
+    public void setDesc_ccosto(String desc_ccosto) {
+        this.desc_ccosto = desc_ccosto;
+    }
+
+    public double getMonto() {
+        return monto;
+    }
+
+    public void setMonto(double monto) {
+        this.monto = monto;
+    }
+    
     public String getCia_desc() {
         return cia_desc;
     }

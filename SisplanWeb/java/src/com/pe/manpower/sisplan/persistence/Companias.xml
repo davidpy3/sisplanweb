@@ -27,6 +27,18 @@
         where codigo=#value#
     </select>
 
+  <select id="getCompaniasSisplan" resultClass="com.pe.manpower.sisplan.to.Compania" cacheModel="CompaniasCache">
+       SELECT no_cia codigo,nombre
+       FROM plm_cias
+       WHERE IND_EMPRESA_PROPIA='S'
+       ORDER BY 1
+  </select>
+  
+   <select id="getCompaniaSisplan" resultMap="companiasResult" parameterClass="java.lang.Integer">
+        select no_cia codigo,nombre
+        from plm_cias
+        where no_cia=to_char(#value#,'fm00')
+   </select>  
     <!--update id="update" parameterClass="EmployeeObject">
         UPDATE employee
         SET

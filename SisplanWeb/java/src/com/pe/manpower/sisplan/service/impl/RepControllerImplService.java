@@ -9,6 +9,7 @@ import com.pe.manpower.sisplan.exception.BusinessException;
 import com.pe.manpower.sisplan.exception.TransactionException;
 import com.pe.manpower.sisplan.persistence.RepControllerDAO;
 import com.pe.manpower.sisplan.service.RepControllerService;
+import com.pe.manpower.sisplan.to.Compania;
 import com.pe.manpower.sisplan.to.ObjResumen;
 import java.util.List;
 import java.util.logging.Level;
@@ -54,6 +55,32 @@ public class RepControllerImplService implements RepControllerService{
         
         return result;
     }
+    
+    @Override
+    public List<ObjResumen> getCtaBalancePorMes(ObjResumen resumen) throws BusinessException {
+       List<ObjResumen> result=null;
+        try{
+             result=dao.buscarCtaBalancePorMes(resumen);
+        }catch(Exception e){
+          logger.error(e);
+	  throw new BusinessException(Constants.MESSAGE_ERROR_MENU,e);
+        }
+        
+        return result;
+    }
+    
+    @Override
+    public List<ObjResumen> getCtaGastoPorMes(ObjResumen resumen) throws BusinessException {
+       List<ObjResumen> result=null;
+        try{
+             result=dao.buscarCtaGastoPorMes(resumen);
+        }catch(Exception e){
+          logger.error(e);
+	  throw new BusinessException(Constants.MESSAGE_ERROR_MENU,e);
+        }
+        
+        return result;
+    }
      
     @Override
     public List getYears() {
@@ -62,4 +89,15 @@ public class RepControllerImplService implements RepControllerService{
       
     }
     
+    @Override
+    public List getCompaniasSisplan() {
+    
+        return dao.getCompaniasSisplan();
+      
+    }
+    
+    @Override
+    public Compania getCompaniaSisplan(Integer codigo) {
+        return dao.getCompaniaSisplan(codigo);
+    }
 }
