@@ -34,11 +34,55 @@
      <result column="MONTO" property="monto" jdbcType="NUMBER" javaType="double" />
         
      </resultMap>
+     
+     <resultMap id="resultINGSCTRVLEYESS" class="ResumenObject">
+        
+     <result column="NO_CIA" property="no_cia" jdbcType="VARCHAR" javaType="string" />
+     <result column="CIA_DESC" property="cia_desc" jdbcType="VARCHAR" javaType="string" />
+     <result column="ANO" property="ano" jdbcType="NUMBER" javaType="Integer" />
+     <result column="MES_DESC" property="mes_desc" jdbcType="VARCHAR" javaType="string" />
+     <result column="MES" property="mes" jdbcType="NUMBER" javaType="Integer" />
+     <result column="COD_CLIE" property="cod_clie" jdbcType="VARCHAR" javaType="string" />
+     <result column="DESC_CLIE" property="desc_clie" jdbcType="VARCHAR" javaType="string" />
+     <result column="TOT_INGRESOS" property="tot_ing" jdbcType="NUMBER" javaType="double" />
+     <result column="TOT_PROVISIONES" property="tot_prov" jdbcType="NUMBER" javaType="double" />   
+     </resultMap>
+     
+     <resultMap id="resultKardexTrabCCosto" class="ResumenObject">
+        
+     <result column="NO_CIA" property="no_cia" jdbcType="VARCHAR" javaType="string" />
+     <result column="CIA_DESC" property="cia_desc" jdbcType="VARCHAR" javaType="string" />
+     <result column="ANO" property="ano" jdbcType="NUMBER" javaType="Integer" />
+     <result column="MES_DESC" property="mes_desc" jdbcType="VARCHAR" javaType="string" />
+     <result column="MES" property="mes" jdbcType="NUMBER" javaType="Integer" />
+     <result column="COD_CLIE" property="cod_clie" jdbcType="VARCHAR" javaType="string" />
+     <result column="DESC_CLIE" property="desc_clie" jdbcType="VARCHAR" javaType="string" />
+     <result column="COD_CCOSTO" property="cod_ccosto" jdbcType="VARCHAR" javaType="string" />
+     <result column="DESC_CCOSTO" property="desc_ccosto" jdbcType="VARCHAR" javaType="string" />
+     <result column="SALDO_INICIAL" property="saldo_inicial" jdbcType="NUMBER" javaType="long" />
+     <result column="INGRESOS" property="ingresos" jdbcType="NUMBER" javaType="long" />   
+     <result column="CESES" property="ceses" jdbcType="NUMBER" javaType="long" />   
+     
+     </resultMap>
+     
       <parameterMap id="paramsCtaBalanceGasto" class="java.util.Map">
        <parameter property="pNoCia" javaType="string" mode="IN" jdbcType="VARCHAR"/>
        <parameter property="pAno" javaType="java.lang.Integer" mode="IN" jdbcType="NUMBER"/>
        <parameter property="pMes" javaType="java.lang.Integer" mode="IN" jdbcType="NUMBER"/>
        <parameter property="pResult" javaType="java.sql.ResultSet" mode="OUT" jdbcType="ORACLECURSOR" resultMap="resultCtaBalanceGasto"  />
+    </parameterMap>
+    
+     <parameterMap id="paramsINGSCTRVLEYESS" class="java.util.Map">
+       <parameter property="pNoCia" javaType="string" mode="IN" jdbcType="VARCHAR"/>
+       <parameter property="pAno" javaType="java.lang.Integer" mode="IN" jdbcType="NUMBER"/>
+       <parameter property="pResult" javaType="java.sql.ResultSet" mode="OUT" jdbcType="ORACLECURSOR" resultMap="resultINGSCTRVLEYESS"  />
+    </parameterMap>
+    
+     <parameterMap id="paramsKardexTrabCCosto" class="java.util.Map">
+       <parameter property="pNoCia" javaType="string" mode="IN" jdbcType="VARCHAR"/>
+       <parameter property="pAno" javaType="java.lang.Integer" mode="IN" jdbcType="NUMBER"/>
+       <parameter property="pMes" javaType="java.lang.Integer" mode="IN" jdbcType="NUMBER"/>
+       <parameter property="pResult" javaType="java.sql.ResultSet" mode="OUT" jdbcType="ORACLECURSOR" resultMap="resultKardexTrabCCosto"  />
     </parameterMap>
     
     <select id="getYears" resultClass="java.lang.Integer" >
@@ -62,5 +106,12 @@
      <procedure id="buscarCtaGastoPorMes"  parameterMap="paramsCtaBalanceGasto">
         { call SISWEB.PKG_REP_CONTROLLER.PRC_CTAGASTO_X_MES(?,?,?,?) }
     </procedure>
+
+    <procedure id="buscarIngSctrVleyEss"  parameterMap="paramsINGSCTRVLEYESS">
+        { call SISWEB.PKG_REP_CONTROLLER.PRC_INGSCTRVLEYESS(?,?,?) }
+    </procedure>    
     
+    <procedure id="buscarKardexTrabCCosto"  parameterMap="paramsKardexTrabCCosto">
+        { call SISWEB.PKG_REP_CONTROLLER.PRC_KARDEX_TRAB(?,?,?,?) }
+    </procedure>  
 </sqlMap>

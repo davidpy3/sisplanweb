@@ -168,4 +168,75 @@ public class RepControllerAction extends DispatchAction{
         request.setAttribute("params",params); 
               
      }
+    
+     public ActionForward showParamsIngSctrVleyEss(ActionMapping mapping, ActionForm form, HttpServletRequest request, HttpServletResponse response) throws Exception{
+        logger.debug("showParamsCtaGastoPorMes");
+        
+        List listaCias=repService.getCompaniasSisplan();
+        List years=repService.getYears();
+        
+        request.setAttribute("cias",listaCias);
+        request.setAttribute("years",years);
+   
+     return mapping.findForward("pIngSctrVleyEss");
+    }
+    
+     public ActionForward getIngSctrVleyEss(ActionMapping mapping, ActionForm form, HttpServletRequest request, HttpServletResponse response) throws Exception {
+        logger.debug("getIngSctrVleyEss");
+        RepControllerForm repForm=(RepControllerForm) form;
+        ObjResumen resumen=new ObjResumen();
+        resumen.setNo_cia(repForm.getNo_cia());
+        resumen.setAno(Integer.parseInt(repForm.getAno()));
+        logger.debug("getIngSctrVleyEss-> no_cia :"+resumen.getNo_cia());
+        logger.debug("getIngSctrVleyEss-> Ano :"+resumen.getAno());
+        List listaresumen=repService.getIngSctrVleyEss(resumen);
+        request.setAttribute("IngSctrVleyEss",listaresumen);
+        // Mostrar parametros 
+        Compania cia=repService.getCompaniaSisplan(Integer.parseInt(resumen.getNo_cia()));
+        HashMap params=new HashMap();
+        params.put("Compania",cia.getNombre());
+        params.put("Ano",resumen.getAno());
+        
+        request.setAttribute("params",params);
+        return mapping.findForward("IngSctrVleyEss");
+        
+     }
+     
+      public ActionForward showParamsKardexTrabCCosto(ActionMapping mapping, ActionForm form, HttpServletRequest request, HttpServletResponse response) throws Exception{
+        logger.debug("showParamsKardexTrabCCosto");
+        
+        List listaCias=repService.getCompaniasSisplan();
+        List years=repService.getYears();
+        
+        request.setAttribute("cias",listaCias);
+        request.setAttribute("years",years);
+   
+     return mapping.findForward("pKardexTrabCCosto");
+    }
+    
+    public ActionForward getKardexTrabCCosto(ActionMapping mapping, ActionForm form, HttpServletRequest request, HttpServletResponse response) throws Exception {
+        logger.debug("getKardexTrabCCosto");
+        RepControllerForm repForm=(RepControllerForm) form;
+        ObjResumen resumen=new ObjResumen();
+        resumen.setNo_cia(repForm.getNo_cia());
+        resumen.setAno(Integer.parseInt(repForm.getAno()));
+        resumen.setMes(Integer.parseInt(repForm.getMes()));
+        logger.debug("getKardexTrabCCosto-> no_cia :"+resumen.getNo_cia());
+        logger.debug("getKardexTrabCCosto-> Ano :"+resumen.getAno());
+        logger.debug("getKardexTrabCCosto-> Mes :"+resumen.getMes());
+        List listaresumen=repService.getKardexTrabCCosto(resumen);
+        request.setAttribute("KardexTrabCCosto",listaresumen);
+        // Mostrar parametros 
+        Compania cia=repService.getCompaniaSisplan(Integer.parseInt(resumen.getNo_cia()));
+        HashMap params=new HashMap();
+        params.put("Compania",cia.getNombre());
+        params.put("Ano",resumen.getAno());
+        params.put("Mes",Util.getMesNombre(resumen.getMes()));
+        params.put("CiaAbrev",Util.toInitCap(cia.getNombre()));
+        request.setAttribute("params",params);
+        
+        return mapping.findForward("KardexTrabCCosto");
+        
+     }
+    
 }
