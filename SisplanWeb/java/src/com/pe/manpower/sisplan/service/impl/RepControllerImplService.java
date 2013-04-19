@@ -81,8 +81,34 @@ public class RepControllerImplService implements RepControllerService{
         
         return result;
     }
-     
+    
     @Override
+    public List<ObjResumen> getIngSctrVleyEss(ObjResumen resumen) throws BusinessException {
+       List<ObjResumen> result=null;
+        try{
+             result=dao.buscarIngSctrVleyEss(resumen);
+        }catch(Exception e){
+          logger.error(e);
+	  throw new BusinessException(Constants.MESSAGE_ERROR_MENU,e);
+        }
+        
+        return result;
+    }
+  
+   @Override
+    public List<ObjResumen> getKardexTrabCCosto(ObjResumen resumen) throws BusinessException {
+       List<ObjResumen> result=null;
+        try{
+             result=dao.buscarKardexTrabCCosto(resumen);
+        }catch(Exception e){
+          logger.error(e);
+	  throw new BusinessException(Constants.MESSAGE_ERROR_MENU,e);
+        }
+        
+        return result;
+    }
+   
+   @Override
     public List getYears() {
     
         return dao.getYears();

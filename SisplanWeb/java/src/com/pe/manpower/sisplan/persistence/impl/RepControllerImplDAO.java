@@ -102,6 +102,48 @@ public class RepControllerImplDAO extends SqlMapClientTemplate implements RepCon
     }
     
     @Override
+    public List<ObjResumen> buscarIngSctrVleyEss(ObjResumen resum) throws TransactionException {
+        
+         List<ObjResumen> list=null;
+      try{
+          Map<String, Object> parmMap = new HashMap<String, Object>();
+	
+	  parmMap.put("pNoCia",resum.getNo_cia()); 
+          parmMap.put("pAno",resum.getAno()); 
+                                           
+          queryForObject("RepController.buscarIngSctrVleyEss", parmMap);
+          list=(List<ObjResumen>)parmMap.get("pResult");
+           logger.debug(list.size());         
+      }catch(Exception e){
+        e.printStackTrace();
+	logger.error(e);
+      }
+       return list;
+    }
+    
+       
+    @Override
+    public List<ObjResumen> buscarKardexTrabCCosto(ObjResumen resum) throws TransactionException {
+        
+         List<ObjResumen> list=null;
+      try{
+          Map<String, Object> parmMap = new HashMap<String, Object>();
+	
+	  parmMap.put("pNoCia",resum.getNo_cia()); 
+          parmMap.put("pAno",resum.getAno()); 
+          parmMap.put("pMes",resum.getMes());
+                                           
+          queryForObject("RepController.buscarKardexTrabCCosto", parmMap);
+          list=(List<ObjResumen>)parmMap.get("pResult");
+           logger.debug(list.size());         
+      }catch(Exception e){
+        e.printStackTrace();
+	logger.error(e);
+      }
+       return list;
+    }
+    
+    @Override
     public List getYears(){
         return queryForList("RepController.getYears", null);
     }

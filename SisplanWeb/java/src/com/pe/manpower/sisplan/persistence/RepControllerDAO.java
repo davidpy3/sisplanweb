@@ -19,6 +19,8 @@ public interface RepControllerDAO {
     public List<ObjResumen> buscarCesesPorMes(ObjResumen resum) throws TransactionException;
     public List<ObjResumen> buscarCtaBalancePorMes(ObjResumen resum) throws TransactionException;
     public List<ObjResumen> buscarCtaGastoPorMes(ObjResumen resum) throws TransactionException;
+    public List<ObjResumen> buscarIngSctrVleyEss(ObjResumen resum) throws TransactionException;
+    public List<ObjResumen> buscarKardexTrabCCosto(ObjResumen resum) throws TransactionException;
     public List getCompaniasSisplan();
     public List getYears();
     public Compania getCompaniaSisplan(Integer codigo);

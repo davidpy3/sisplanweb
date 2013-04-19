@@ -93,6 +93,10 @@
             <forward name="pCtaBalancexMes" path="/pCtaBalancePorMes.jsp"/>
             <forward name="CtaGastoxMes" path="/CtaGastoPorMes.jsp"/>
             <forward name="pCtaGastoxMes" path="/pCtaGastoPorMes.jsp"/>
+            <forward name="IngSctrVleyEss" path="/IngSctrVleyEss.jsp"/>
+            <forward name="pIngSctrVleyEss" path="/pIngSctrVleyEss.jsp"/>
+            <forward name="KardexTrabCCosto" path="/KardexTrabCCosto.jsp"/>
+            <forward name="pKardexTrabCCosto" path="/pKardexTrabCCosto.jsp"/>
         </action>
         
     </action-mappings>

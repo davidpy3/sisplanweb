@@ -23,6 +23,54 @@ public class ObjResumen {
     private String  cod_ccosto;
     private String  desc_ccosto;
     private double  monto;
+    private double  tot_ing;
+    private double  tot_prov;
+    private long    saldo_inicial;
+    private long    ingresos;
+    private long    ceses;
+
+    public long getSaldo_inicial() {
+        return saldo_inicial;
+    }
+
+    public void setSaldo_inicial(long saldo_inicial) {
+        this.saldo_inicial = saldo_inicial;
+    }
+
+    public long getIngresos() {
+        return ingresos;
+    }
+
+    public void setIngresos(long ingresos) {
+        this.ingresos = ingresos;
+    }
+
+    public long getCeses() {
+        return ceses;
+    }
+
+    public void setCeses(long ceses) {
+        this.ceses = ceses;
+    }
+
+    
+    
+    public double getTot_ing() {
+        return tot_ing;
+    }
+
+    public void setTot_ing(double tot_ing) {
+        this.tot_ing = tot_ing;
+    }
+
+    public double getTot_prov() {
+        return tot_prov;
+    }
+
+    public void setTot_prov(double tot_prov) {
+        this.tot_prov = tot_prov;
+    }
+    
 
     public String getCod_concepto() {
         return cod_concepto;
