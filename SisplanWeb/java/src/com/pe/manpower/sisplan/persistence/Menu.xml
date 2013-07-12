@@ -3,7 +3,8 @@
 <sqlMap namespace="Menu">
 
     <typeAlias alias="MenuObject" type="com.pe.manpower.sisplan.to.Menu"/>
-
+    <typeAlias alias="MenuCiaObject" type="com.pe.manpower.sisplan.to.MenuCia"/>
+    
     <cacheModel id="menuCache" type="MEMORY" readOnly="false" serialize="true">
         <flushInterval hours="24"/>
         <flushOnExecute statement="Menu.update"/>
@@ -71,11 +72,36 @@
     
     <parameterMap id="vecMenu" class="java.util.Map">
        <parameter property="pLogIn" javaType="string" mode="IN" jdbcType="VARCHAR"/>
+       <parameter property="pRol" javaType="integer" mode="IN" jdbcType="NUMBER"/>
+       <parameter property="pNoCia" javaType="integer" mode="IN" jdbcType="NUMBER"/>
        <parameter property="pResult" javaType="java.sql.ResultSet" mode="OUT" jdbcType="ORACLECURSOR" resultMap="menuResult"  />
     </parameterMap>
     
     <procedure id="buscarMenuUsuario"  parameterMap="vecMenu">
-        { call SISWEB.PKG_SEGURIDAD.PRC_MOSTRAR_MENU(?,?) }
+        { call SISWEB.PKG_SEGURIDAD.PRC_MOSTRAR_MENU(?,?,?,?) }
     </procedure>
+    
+    <insert id="insertMenuCia" parameterClass="MenuCiaObject">
+        INSERT INTO MENU_CIA
+          (MENUID,NO_CIA,ESTADO)
+        VALUES
+          (#menuid#,lpad(#no_cia#,2,'0'),'S')
+    </insert>
+    
+    <delete id="deleteMenuCia" parameterClass="MenuCiaObject">
+        DELETE FROM menu_cia WHERE menuid = #menuid# and no_cia=lpad(#no_cia#,2,'0')
+    </delete>
+    
+    <select id="getMenuByCia" resultClass="java.util.HashMap" parameterClass="java.lang.String">
+       SELECT m.menuid,m.menutipo,lpad(' ',2*(level-1)) || menutitle menutitle,m.estado,m.parentid ,
+               decode(( select 1 
+                        from menu_cia r 
+                        where r.menuid=m.menuid 
+                         and r.no_cia=lpad(#value#,2,'0') ),1,'S','N') acceso
+        FROM menu m 
+        START WITH  m.parentid IS  NULL 
+        CONNECT BY  PRIOR m.menuid = m.parentid
+        ORDER SIBLINGS BY m.menuorden
+    </select>
     
 </sqlMap>

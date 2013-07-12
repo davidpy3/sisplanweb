@@ -17,7 +17,7 @@ private long   id;
   private String nombre;
   private String ap_pat;
   private String ap_mat;
-  private long tipo_doc_id;
+  private String tipo_doc_id;
   private String num_doc_id;
   private String password;
   private String email;
@@ -29,7 +29,33 @@ private long   id;
   private String sfecha_crea;
   private String sfecha_mod;
   private String estado;
+  private Rol rol;
+  private Compania cia;
+  private String ruta_impresion;
+  private String usuario_db;
+  private String password_db;
+  private String id_repre_legal;
+  private String id_modifica_vac;
+  private String ind_not_ven_cont;
+  private Integer cod_staff;
 
+    public Rol getRol() {
+        return rol;
+    }
+
+    public void setRol(Rol rol) {
+        this.rol = rol;
+    }
+
+    public Compania getCia() {
+        return cia;
+    }
+
+    public void setCia(Compania cia) {
+        this.cia = cia;
+    }
+  
+  
   private long cliente_id;
 
     
@@ -49,11 +75,11 @@ private long   id;
         this.rol_id = rol_id;
     }
 
-    public long getTipo_doc_id() {
+    public String getTipo_doc_id() {
         return tipo_doc_id;
     }
 
-    public void setTipo_doc_id(long tipo_doc_id) {
+    public void setTipo_doc_id(String tipo_doc_id) {
         this.tipo_doc_id = tipo_doc_id;
     }
 
@@ -175,6 +201,62 @@ private long   id;
 
     public void setSession(String session) {
         this.session = session;
+    }
+
+    public String getRuta_impresion() {
+        return ruta_impresion;
+    }
+
+    public void setRuta_impresion(String ruta_impresion) {
+        this.ruta_impresion = ruta_impresion;
+    }
+
+    public String getUsuario_db() {
+        return usuario_db;
+    }
+
+    public void setUsuario_db(String usuario_db) {
+        this.usuario_db = usuario_db;
+    }
+
+    public String getPassword_db() {
+        return password_db;
+    }
+
+    public void setPassword_db(String password_db) {
+        this.password_db = password_db;
+    }
+
+    public String getId_repre_legal() {
+        return id_repre_legal;
+    }
+
+    public void setId_repre_legal(String id_repre_legal) {
+        this.id_repre_legal = id_repre_legal;
+    }
+
+    public String getId_modifica_vac() {
+        return id_modifica_vac;
+    }
+
+    public void setId_modifica_vac(String id_modifica_vac) {
+        this.id_modifica_vac = id_modifica_vac;
+    }
+
+    public String getInd_not_ven_cont() {
+        return ind_not_ven_cont;
+    }
+
+    public void setInd_not_ven_cont(String ind_not_ven_cont) {
+        this.ind_not_ven_cont = ind_not_ven_cont;
+    }
+
+    public Integer getCod_staff() {
+        return cod_staff;
+    }
+
+    public void setCod_staff(Integer cod_staff) {
+        this.cod_staff = cod_staff;
     }
 
 

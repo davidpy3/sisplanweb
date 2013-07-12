@@ -60,7 +60,15 @@
         FROM rol
         WHERE cod_rol =  #value#
     </select>
-
+    
+    <select id="getUsersRoles" resultMap="rolResult" parameterClass="java.lang.String">
+        SELECT a.cod_rol,b.DESCRIPCION
+        FROM usuario_rol a, rol b
+        WHERE UPPER(a.usuario)=UPPER(#value#)
+         AND b.COD_ROL=a.COD_ROL
+        ORDER BY 1
+    </select>
+    
     <update id="update" parameterClass="RolObject">
         UPDATE ROL
         SET descripcion = #nombre#

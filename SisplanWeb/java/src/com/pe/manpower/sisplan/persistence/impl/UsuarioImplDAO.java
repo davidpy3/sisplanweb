@@ -14,6 +14,8 @@ import org.springframework.orm.ibatis.SqlMapClientTemplate;
 import com.pe.manpower.sisplan.to.Usuario;
 import com.pe.manpower.sisplan.exception.TransactionException;
 import com.pe.manpower.sisplan.persistence.UsuarioDAO;
+import com.pe.manpower.sisplan.to.Compania;
+import com.pe.manpower.sisplan.to.Rol;
 
 /**
  *
@@ -53,6 +55,52 @@ public class UsuarioImplDAO extends SqlMapClientTemplate implements UsuarioDAO {
 	logger.error(e);
       }
       return result;
+    }
+
+    @Override
+    public List<Compania> getCiasByRol(Rol rol) throws TransactionException {
+      return queryForList("Companias.getCiasByRol", rol.getId());  
+    }
+
+    @Override
+    public List<Rol> getRolesByUser(Usuario usuario) throws TransactionException {
+        
+      return queryForList("Rol.getUsersRoles",usuario.getLogin()); 
+    }
+
+    @Override
+    public Rol getRol(Integer id){
+        return ((Rol)queryForObject("Rol.getById", id));
+    }
+
+    @Override
+    public Compania getCompania(Integer codigo) {
+        return ((Compania)queryForObject("Companias.getCompania", codigo));
+    }
+
+    @Override
+    public List getAll() {
+        return queryForList("Usuario.getAll", null);
+    }
+
+    @Override
+    public Usuario getUser(String codigo) {
+       return ((Usuario)queryForObject("Usuario.getById", codigo));
+    }
+
+    @Override
+    public int update(Usuario user) {
+        return update("Usuario.update",user);
+    }
+
+    @Override
+    public Integer insert(Usuario user) {
+       return (Integer)insert("Usuario.insert",user);
+    }
+
+    @Override
+    public int delete(String codigo) {
+        return delete("Usuario.delete",codigo);
     }
 
    

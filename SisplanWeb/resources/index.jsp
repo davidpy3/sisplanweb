@@ -47,18 +47,20 @@ response.setDateHeader("Expires",-1);
    %>
   <jsp:forward   page="login.jsp" /> 
 <%}%>  
-<table height="100%" cellspacing="0" cols="2" cellpadding="0" width="100%" align="center" border=0>
+<table height="100%" cellspacing="0" cellpadding="0" width="100%" align="center" border=1>
   <tbody>
   <tr height="1">
     <td style="height: 57px;" width="100%" bgcolor="#ffffff">
-      <table width="100%" border="0">
+      <table width="100%" border="1">
         <tbody>
         <tr>
           <td align="left"><img src="imagenes/aLogo.gif" border="0"></td>
           <td align="center" valign="bottom">
-              <br><br><br>
-              <b>Usuario:</b><span class="subtitulog11"> <%=usuario.getNombre() + " " + usuario.getAp_pat() %></span>
-              <div id="copyright">Copyright &copy; 2012 <a href="http://apycom.com/">Apycom jQuery Menus</a></div>
+              <br>
+              <b>Compañia:</b><span class="subtitulog11"> <%=usuario.getCia().getNombre()%></span><br>
+              <b>Usuario:</b><span class="subtitulog11"> <%=usuario.getNombre() + " " + usuario.getAp_pat() %></span><br>
+              <b>Perfil:</b><span class="subtitulog11"> <%=usuario.getRol().getNombre() %></span>
+              
           </td>
           <td align="right">
           <table  cellspacing="0" cellpadding="0"  border=0>
@@ -86,21 +88,22 @@ response.setDateHeader("Expires",-1);
      </td>
   </tr>
 
-               <tr height="4%">
-                   <td valign="top" width="100%"><!--MENU-->
-                    <%@ include file="menu.jsp" %>
-               </td>  
+               <tr height="100%">
+                  <td  ><!--MENU-->
+                   <table height="100%" cellspacing="0" cellpadding="0" width="100%" align="center" border=1>
+                      <tr height="100%">
+                      <td width="20%" ><%@ include file="menu.jsp" %></td>    
+                      <td width="80%" >
+                       <iframe name="FraMain" src="blank.jsp" frameBorder=yes width="100%" height="100%">
+                       </iframe> 
+                      </td>
+                       </tr>
+                   </table>
+                  </td>  
                    
                </tr>
-                <tr height="100%">
-                <td>
-                    <iframe name="FraMain" src="blank.jsp" frameBorder=no width="100%" height="100%">
-                     </iframe>
-                
-                </td>
-              </tr>
-               </tbody>
-               </table>  
+              </tbody>
+    </table>  
    
     </body>
 </html>

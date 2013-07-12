@@ -39,6 +39,20 @@
         from plm_cias
         where no_cia=to_char(#value#,'fm00')
    </select>  
+   
+   <select id="getCiasByRol" resultMap="companiasResult" parameterClass="java.lang.Integer">
+     SELECT distinct m.no_cia codigo,c.nombre
+     FROM menu_cia m , plm_cias c
+     WHERE EXISTS (select 1 
+                   from menu_rol r
+                   where r.menuid=m.menuid
+                    and r.cod_rol= #value#
+                  )
+        AND c.no_cia=m.no_cia
+      ORDER BY 1
+       
+   </select>  
+   
     <!--update id="update" parameterClass="EmployeeObject">
         UPDATE employee
         SET

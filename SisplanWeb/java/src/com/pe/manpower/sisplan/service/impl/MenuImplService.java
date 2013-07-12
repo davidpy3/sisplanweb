@@ -14,6 +14,8 @@ import com.pe.manpower.sisplan.exception.BusinessException;
 import com.pe.manpower.sisplan.persistence.MenuDAO;
 import com.pe.manpower.sisplan.Constants;
 import com.pe.manpower.sisplan.service.MenuService;
+import com.pe.manpower.sisplan.to.Compania;
+import com.pe.manpower.sisplan.to.MenuCia;
 
 /**
  *
@@ -64,6 +66,31 @@ public class MenuImplService implements MenuService{
     @Override
     public List getAllMenusParents() {
         return dao.getAllParents();
+    }
+
+    @Override
+    public List getCompaniasSisplan() {
+        return dao.getCompaniasSisplan();
+    }
+
+    @Override
+    public List getMenuByCia(String no_cia) {
+        return dao.getMenuByCia(no_cia);
+    }
+
+    @Override
+    public Compania getCompaniaSisplan(Integer codigo) {
+        return dao.getCompaniaSisplan(codigo);
+    }
+
+    @Override
+    public void insertMenuCia(MenuCia menucia) {
+        dao.insertMenuCia(menucia);
+    }
+
+    @Override
+    public void deleteMenuCia(MenuCia menucia) {
+        dao.deleteMenuCia(menucia);
     }
 
 }

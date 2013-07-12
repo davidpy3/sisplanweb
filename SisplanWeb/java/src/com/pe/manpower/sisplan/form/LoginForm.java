@@ -20,7 +20,26 @@ public class LoginForm extends org.apache.struts.action.ActionForm {
    private String password;
    private String password1;
    private String password2;
+   private String no_cia;
+   private Integer rolid;
 
+    public String getNo_cia() {
+        return no_cia;
+    }
+
+    public void setNo_cia(String no_cia) {
+        this.no_cia = no_cia;
+    }
+
+    public Integer getRolid() {
+        return rolid;
+    }
+
+    public void setRolid(Integer rolid) {
+        this.rolid = rolid;
+    }
+
+   
     public String getPassword1() {
         return password1;
     }

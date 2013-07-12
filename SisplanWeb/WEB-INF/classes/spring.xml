@@ -49,7 +49,17 @@
        <constructor-arg index="0" ref="usuarioService"/>
        <constructor-arg index="1" ref="menuService"/>
     </bean>
-       <!-- Menu -->
+
+    <bean name="/userSetUp" class="com.pe.manpower.sisplan.action.UsuarioAction">
+       <constructor-arg index="0" ref="usuarioService"/>
+       <constructor-arg index="1" ref="menuService"/>
+    </bean>
+    <bean name="/userProcess" class="com.pe.manpower.sisplan.action.UsuarioAction">
+       <constructor-arg index="0" ref="usuarioService"/>
+       <constructor-arg index="1" ref="menuService"/>
+    </bean>
+    
+    <!-- Menu -->
      <bean id="menuDao" class="com.pe.manpower.sisplan.persistence.impl.MenuImplDAO">
        <property name="sqlMapClient">
           <ref bean="sqlMapClient"/>

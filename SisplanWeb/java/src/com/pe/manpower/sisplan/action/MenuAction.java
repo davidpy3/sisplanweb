@@ -7,7 +7,9 @@ package com.pe.manpower.sisplan.action;
 import com.pe.manpower.sisplan.Constants;
 import com.pe.manpower.sisplan.form.MenuForm;
 import com.pe.manpower.sisplan.service.MenuService;
+import com.pe.manpower.sisplan.to.Compania;
 import com.pe.manpower.sisplan.to.Menu;
+import com.pe.manpower.sisplan.to.MenuCia;
 import java.util.List;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -105,7 +107,47 @@ public class MenuAction extends DispatchAction{
         }
         return updateFlag;
     }
-
+    
+     public ActionForward showMenuByCia(ActionMapping mapping, ActionForm form, HttpServletRequest request, HttpServletResponse response) throws Exception {
+        logger.debug("showMenuByCia");
+        //RolForm rolForm = (RolForm)form;
+        //Integer id = Integer.valueOf(rolForm.getId());
+        //populateMenuRole(request, id);
+        List cias=menuService.getCompaniasSisplan();
+        request.setAttribute("cias",cias);
+        return mapping.findForward("cias");
+    }
+       
+   public ActionForward getMenuByCia(ActionMapping mapping, ActionForm form, HttpServletRequest request, HttpServletResponse response) throws Exception {
+        logger.debug("getMenuByCia");
+        MenuForm menuForm = (MenuForm)form;
+        String no_cia = menuForm.getNo_cia();
+        populateMenuCia(request,no_cia);
+        return mapping.findForward(Constants.MENUCIA);
+    }
+    private void populateMenuCia(HttpServletRequest request,String no_cia) {
+        List menucias=menuService.getMenuByCia(no_cia);
+        Compania cia=menuService.getCompaniaSisplan(Integer.valueOf(no_cia));
+        request.setAttribute(Constants.CIA,cia);
+        request.setAttribute(Constants.MENUCIA,menucias);
+    }
+    public ActionForward setUpMenuToCia(ActionMapping mapping, ActionForm form, HttpServletRequest request, HttpServletResponse response) throws Exception {
+        logger.debug("setUpMenuToRol");
+        String  no_cia = request.getParameter("no_cia");
+        Integer menuid = Integer.valueOf(request.getParameter("menuid"));
+        String action = request.getParameter("action");
+        MenuCia menucia=new MenuCia();
+        menucia.setNo_cia(no_cia);
+        menucia.setMenuid(menuid);
+        //rolmenu.setUsuario(((Usuario)request.getSession().getAttribute("usr")).getLogin());
+        if(action.equals("add")) {
+          menuService.insertMenuCia(menucia);
+        }else{
+          menuService.deleteMenuCia(menucia);
+        }
+        populateMenuCia(request,no_cia);
+        return mapping.findForward(Constants.MENUCIA);
+    }
     private boolean validationSuccessful(HttpServletRequest request, MenuForm form) {
         //if you really like using the validation framework stuff, you can just
         //call  ActionErrors errors = form.validate( mapping, request ); in this method
