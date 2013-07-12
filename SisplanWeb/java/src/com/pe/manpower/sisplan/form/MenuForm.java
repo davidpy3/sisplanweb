@@ -17,6 +17,7 @@ public class MenuForm extends org.apache.struts.action.ActionForm {
     private String titulo;
     private String parentid;
     private String url;
+    private String no_cia;
 
     public String getUrl() {
         return url;
@@ -80,6 +81,14 @@ public class MenuForm extends org.apache.struts.action.ActionForm {
 
     public void setParentid(String parentid) {
         this.parentid = parentid;
+    }
+
+    public String getNo_cia() {
+        return no_cia;
+    }
+
+    public void setNo_cia(String no_cia) {
+        this.no_cia = no_cia;
     }
     
     

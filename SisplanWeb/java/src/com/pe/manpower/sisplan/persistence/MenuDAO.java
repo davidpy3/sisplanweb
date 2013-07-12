@@ -6,7 +6,9 @@
 package com.pe.manpower.sisplan.persistence;
 
 import com.pe.manpower.sisplan.exception.TransactionException;
+import com.pe.manpower.sisplan.to.Compania;
 import com.pe.manpower.sisplan.to.Menu;
+import com.pe.manpower.sisplan.to.MenuCia;
 import com.pe.manpower.sisplan.to.Usuario;
 import java.util.List;
 
@@ -23,5 +25,9 @@ public interface MenuDAO {
     public int update(Menu menu);
     public Integer insert(Menu menu);
     public int delete(Integer id);
-
+    public List getCompaniasSisplan();
+    public List getMenuByCia(String no_cia);
+    public Compania getCompaniaSisplan(Integer codigo);
+    public Integer insertMenuCia(MenuCia menucia);
+    public int deleteMenuCia(MenuCia menucia);
 }

@@ -24,5 +24,7 @@ public abstract class Constants {
     public static final String ROL = "rol";
     public static final String USUARIOROL = "usuariorol";
     public static final String USUARIOSNOROL = "usuariosnorol";
+    public static final String CIA = "cia";
+    public static final String MENUCIA = "menucia";
 }
 

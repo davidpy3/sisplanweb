@@ -11,6 +11,8 @@ import org.apache.commons.logging.LogFactory;
 import com.pe.manpower.sisplan.to.Menu;
 import com.pe.manpower.sisplan.to.Usuario;
 import com.pe.manpower.sisplan.exception.BusinessException;
+import com.pe.manpower.sisplan.to.Compania;
+import com.pe.manpower.sisplan.to.MenuCia;
 
 /**
  *
@@ -29,4 +31,9 @@ public interface MenuService {
     public Menu getMenu(Integer id);
 
     public void insertMenu(Menu menu);
+    public List getCompaniasSisplan();
+    public List getMenuByCia(String no_cia);
+    public Compania getCompaniaSisplan(Integer codigo);
+    public void insertMenuCia(MenuCia menucia);
+    public void deleteMenuCia(MenuCia menucia);
 }

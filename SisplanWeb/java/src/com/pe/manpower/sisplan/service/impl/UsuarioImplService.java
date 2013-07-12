@@ -13,6 +13,8 @@ import com.pe.manpower.sisplan.exception.BusinessException;
 import com.pe.manpower.sisplan.persistence.UsuarioDAO;
 import com.pe.manpower.sisplan.Constants;
 import com.pe.manpower.sisplan.service.UsuarioService;
+import com.pe.manpower.sisplan.to.Compania;
+import com.pe.manpower.sisplan.to.Rol;
 
 /**
  *
@@ -47,6 +49,67 @@ public class UsuarioImplService implements UsuarioService {
         }
         
         return result;
+    }
+
+    @Override
+    public List<Compania> getCiasByRol(Rol rol) throws BusinessException {
+       List<Compania> result=null;
+        try{
+             result=dao.getCiasByRol(rol);
+        }catch(Exception e){
+          logger.error(e);
+	  throw new BusinessException("UsuarioImplService getCiasByRol Error",e);
+        }
+        
+        return result;
+    }
+
+    @Override
+    public List<Rol> getRolesByUser(Usuario usuario) throws BusinessException {
+         List<Rol> result=null;
+        try{
+             result=dao.getRolesByUser(usuario);
+        }catch(Exception e){
+          logger.error(e);
+	  throw new BusinessException("UsuarioImplService getRolesByUser Error",e);
+        }
+        
+        return result;
+    }
+
+    @Override
+    public Rol getRol(Integer id) {
+       return dao.getRol(id);
+    }
+
+    @Override
+    public Compania getCompania(Integer codigo) {
+         return dao.getCompania(codigo);
+    }
+
+    @Override
+    public List getAllUsers() {
+        return dao.getAll();
+    }
+
+    @Override
+    public void updateUser(Usuario usuario) {
+        dao.update(usuario);
+    }
+
+    @Override
+    public void deleteUser(String codigo) {
+        dao.delete(codigo);
+    }
+
+    @Override
+    public Usuario geUser(String codigo) {
+        return dao.getUser(codigo);
+    }
+
+    @Override
+    public void insertUser(Usuario usuario) {
+        dao.insert(usuario);
     }
 
      
