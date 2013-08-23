@@ -22,12 +22,14 @@
      <result column="MENUTITLE" property="titulo" jdbcType="VARCHAR" javaType="string" />
      <result column="MENUACTION" property="url" jdbcType="VARCHAR" javaType="string" />
      <result column="PARENTID" property="parentid" jdbcType="NUMBER" javaType="Integer" />   
+     <result column="INDWEB" property="indweb" jdbcType="VARCHAR" javaType="string" />  
      </resultMap>
 
     <!-- hsql db used for this example capitalizes col names
          so Map will have them as all caps -->
     <select id="getAll" resultClass="java.util.HashMap" cacheModel="menuCache">
-        SELECT m.menuid,m.menutipo,lpad(' ',2*(level-1)) || menutitle menutitle,m.estado,m.menuorden,m.menuaction,m.parentid
+        SELECT m.menuid,m.menutipo,lpad(' ',2*(level-1)) || menutitle menutitle,m.estado,m.menuorden,m.menuaction,m.parentid,
+               m.indweb
         FROM menu m 
         START WITH  m.parentid = 0 
         CONNECT BY  PRIOR m.menuid = m.parentid
@@ -44,7 +46,7 @@
     </select>
     
     <select id="getById" resultMap="menuResult" parameterClass="java.lang.Integer">
-        SELECT menuid,menutipo,estado,menuorden,menutitle,menuaction,parentid
+        SELECT menuid,menutipo,estado,menuorden,menutitle,menuaction,parentid,indweb
         FROM menu
         WHERE menuid =  #value#
     </select>
@@ -57,13 +59,14 @@
             menuorden = #posid#,
             menutitle = #titulo#,
             menuaction = #url#,
-            parentid = #parentid#
+            parentid = #parentid#,
+            indweb = #indweb#
         WHERE menuid = #menuid#
     </update>
 
     <insert id="insert" parameterClass="MenuObject">
-        INSERT INTO menu (MENUID, MENUTIPO, MENUTITLE, MENUDESC, PARENTID, ESTADO, MENUACTION, MENUORDEN )
-        VALUES ( null, #tipo#, #titulo#,#titulo#,#parentid#,#estado#,#url#,#posid# )
+        INSERT INTO menu (MENUID, MENUTIPO, MENUTITLE, MENUDESC, PARENTID, ESTADO, MENUACTION, MENUORDEN,INDWEB )
+        VALUES ( null, #tipo#, #titulo#,#titulo#,#parentid#,#estado#,#url#,#posid#,#indweb# )
     </insert>
 
     <delete id="delete" parameterClass="java.lang.Integer">

@@ -66,6 +66,15 @@
             <td class="tdLabel">URL:</td>
             <td><html:text property="url" size="40"/> <html:errors property="url"/></td>
         </tr>
+         <tr>
+            <td class="tdLabel">Formato Salida:</td>
+            <td>
+            
+            <html:radio property="indweb" value="F"/> Forms
+            <html:radio property="indweb" value="W"/> Web
+   	    <html:errors property="indweb"/>
+            </td>
+        </tr>
         <tr>
             <td colspan="2">
                 <html:hidden property="menuid"/>

@@ -18,6 +18,17 @@ public class MenuForm extends org.apache.struts.action.ActionForm {
     private String parentid;
     private String url;
     private String no_cia;
+    private String indweb;
+
+    public String getIndweb() {
+        return indweb;
+    }
+
+    public void setIndweb(String indweb) {
+        this.indweb = indweb;
+    }
+    
+    
 
     public String getUrl() {
         return url;

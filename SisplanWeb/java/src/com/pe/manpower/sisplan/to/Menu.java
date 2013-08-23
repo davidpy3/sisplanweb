@@ -19,7 +19,19 @@ public class Menu implements Serializable{
     private String titulo;
     private String url;
     private Integer parentid;
+    private String no_cia;
+    private String codigo;
+    private String indweb;
 
+    public String getIndweb() {
+        return indweb;
+    }
+
+    public void setIndweb(String indweb) {
+        this.indweb = indweb;
+    }
+    
+    
     public Integer getMenuid() {
         return menuid;
     }

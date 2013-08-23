@@ -125,4 +125,16 @@
         DELETE FROM ARCFUSU WHERE USUARIO = #value#
     </delete>
     
+    <insert id="insertSesion" parameterClass="UsuarioObject">
+       INSERT INTO ARCFSE 
+          (sesion_id,sesion_user,ip_addr) 
+        VALUES 
+          (#session#,#login#,#ipaddr#)        
+    </insert>
+    
+    <insert id="deleteSesion" parameterClass="UsuarioObject">
+      DELETE FROM ARCFSE 
+      WHERE  sesion_id   = #session#
+        AND  sesion_user = #login#       
+    </insert>
 </sqlMap>

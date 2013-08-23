@@ -29,5 +29,7 @@ public interface  UsuarioService {
     public void deleteUser(String codigo);
     public Usuario geUser(String codigo);
     public void insertUser(Usuario usuario); 
+    public void GrabarSesion(Usuario usuario);
+    public void BorrarSesion(Usuario usuario);
     
 }

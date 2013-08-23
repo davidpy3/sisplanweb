@@ -112,5 +112,15 @@ public class UsuarioImplService implements UsuarioService {
         dao.insert(usuario);
     }
 
+    @Override
+    public void GrabarSesion(Usuario usuario) {
+        dao.GrabarSesion(usuario);
+    }
+
+    @Override
+    public void BorrarSesion(Usuario usuario) {
+        dao.BorrarSesion(usuario);
+    }
+
      
 }
