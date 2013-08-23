@@ -38,7 +38,17 @@ private long   id;
   private String id_modifica_vac;
   private String ind_not_ven_cont;
   private Integer cod_staff;
+  private String ipaddr;
 
+    public String getIpaddr() {
+        return ipaddr;
+    }
+
+    public void setIpaddr(String ipaddr) {
+        this.ipaddr = ipaddr;
+    }
+  
+  
     public Rol getRol() {
         return rol;
     }

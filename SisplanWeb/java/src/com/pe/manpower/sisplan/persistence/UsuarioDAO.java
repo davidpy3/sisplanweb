@@ -28,4 +28,6 @@ public interface UsuarioDAO {
      public int update(Usuario user);
      public Integer insert(Usuario user);
      public int delete(String codigo);
+     public Integer GrabarSesion(Usuario user);
+     public Integer BorrarSesion(Usuario user);
 }

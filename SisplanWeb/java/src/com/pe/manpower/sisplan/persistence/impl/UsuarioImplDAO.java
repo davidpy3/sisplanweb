@@ -103,5 +103,16 @@ public class UsuarioImplDAO extends SqlMapClientTemplate implements UsuarioDAO {
         return delete("Usuario.delete",codigo);
     }
 
+    @Override
+    public Integer GrabarSesion(Usuario user) {
+        return (Integer)insert("Usuario.insertSesion",user);
+    }
+
+    @Override
+    public Integer BorrarSesion(Usuario user) {
+         return (Integer)insert("Usuario.deleteSesion",user);
+        
+    }
+
    
 }

@@ -30,6 +30,7 @@ import com.pe.manpower.sisplan.form.RolForm;
 import com.pe.manpower.sisplan.form.UsuarioForm;
 import com.pe.manpower.sisplan.to.Compania;
 import com.pe.manpower.sisplan.to.Rol;
+import com.pe.manpower.sisplan.util.Config;
 import org.apache.commons.beanutils.BeanUtils;
 
 /**
@@ -71,14 +72,29 @@ public class UsuarioAction extends DispatchAction {
          List<Rol> roles=null;
          List<Compania> cias=null;
          Usuario usr=new Usuario();
+         Config config=new Config();
          ActionMessages errors = new ActionMessages(); 
+         
+         if(!config.IsOk()){
+           if (config.loadProperties()){
+             logger.debug("Cargados los Parametros Principales");
+           }else{
+             logger.debug("No se pudieron cargar los Parametros Principales:"+config.getMensaje());
+             errors.add("login", new ActionMessage("errors.interno","No se pudieron cargar los Parametros Principales:"));  
+             //saveErrors(request,errors);
+           }
+         }
          
         if(isValidUser(request,form,usr)) {
           logger.debug("verdadero");
           logger.debug("usuario "+usr.toString());
           
           usr=usrService.buscarUsuario(loginfrm.getLogin()).get(0);
+          usr.setSession(request.getSession(true).getId());
+          usr.setIpaddr(request.getRemoteAddr());
           request.getSession().setAttribute("usr",usr);
+          // Grabar la session de SISPLAN
+          usrService.GrabarSesion(usr);
           // Obtener los Roles del Usuario
           roles=usrService.getRolesByUser(usr);
            logger.debug("antes de roles");
@@ -172,6 +188,8 @@ public class UsuarioAction extends DispatchAction {
     
     public ActionForward cerrarSesion(ActionMapping mapping, ActionForm form, HttpServletRequest request, HttpServletResponse response) throws Exception {
        logger.debug("cerrarSesion");
+       Usuario usr=(Usuario)request.getSession().getAttribute("usr");
+       usrService.BorrarSesion(usr);
        clearSession(request);
        return mapping.findForward(Constants.SUCCESS);
     }
