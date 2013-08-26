@@ -47,11 +47,11 @@ response.setDateHeader("Expires",-1);
    %>
   <jsp:forward   page="login.jsp" /> 
 <%}%>  
-<table height="100%" cellspacing="0" cellpadding="0" width="100%" align="center" border=1>
+<table height="100%" cellspacing="0" cellpadding="0" width="100%" align="center" border=0>
   <tbody>
   <tr height="1">
     <td style="height: 57px;" width="100%" bgcolor="#ffffff">
-      <table width="100%" border="1">
+      <table width="100%" border="0">
         <tbody>
         <tr>
           <td align="left"><img src="imagenes/aLogo.gif" border="0"></td>
@@ -90,7 +90,7 @@ response.setDateHeader("Expires",-1);
 
                <tr height="100%">
                   <td  ><!--MENU-->
-                   <table height="100%" cellspacing="0" cellpadding="0" width="100%" align="center" border=1>
+                   <table height="100%" cellspacing="0" cellpadding="0" width="100%" align="center" border=0>
                       <tr height="100%">
                       <td width="20%" ><%@ include file="menu.jsp" %></td>    
                       <td width="80%" >

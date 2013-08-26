@@ -39,7 +39,20 @@ public class MenuAction extends DispatchAction{
     
     public ActionForward getMenus(ActionMapping mapping, ActionForm form, HttpServletRequest request, HttpServletResponse response) throws Exception {
         logger.debug("getMenus");
-        populateMenus(request);
+        MenuForm menuFrm=(MenuForm) form;
+        String title=menuFrm.getTitulo();
+        String parentid=menuFrm.getParentid();
+        String indweb=menuFrm.getIndweb();
+        Menu menu=new Menu();
+        if(title!=null||parentid!=null||indweb!=null){
+          menu.setTitulo(title);
+          menu.setIndweb(indweb);
+          if(parentid!=null&&!parentid.equals(""))menu.setParentid(Integer.parseInt(parentid));
+          findMenus(request,menu);
+        }else{
+          populateMenus(request);
+        }
+        prep(request);
         return mapping.findForward(Constants.SUCCESS);
     }
 
@@ -89,7 +102,10 @@ public class MenuAction extends DispatchAction{
         List menus = menuService.getAllMenus();
         request.setAttribute(Constants.MENUS, menus);
     }
-
+    private void findMenus(HttpServletRequest request,Menu menu) {
+        List menus = menuService.findMenus(menu);
+        request.setAttribute(Constants.MENUS, menus);
+    }
     private void prep(HttpServletRequest request) {
         request.setAttribute(Constants.PARENTS, menuService.getAllMenusParents());
     }

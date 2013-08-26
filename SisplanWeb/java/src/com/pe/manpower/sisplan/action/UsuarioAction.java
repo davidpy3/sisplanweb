@@ -290,7 +290,22 @@ public class UsuarioAction extends DispatchAction {
     public ActionForward getUsers(ActionMapping mapping, ActionForm form, HttpServletRequest request, HttpServletResponse response) throws Exception {
         logger.debug("getUsers");
         ActionMessages errors = new ActionMessages(); 
-        populateUsers(request,errors);
+        UsuarioForm usrForm=(UsuarioForm) form;
+        Usuario user=new Usuario();
+        String usuario=usrForm.getUsuario();
+        String nombre=usrForm.getNombre();
+        String ape_pat=usrForm.getApe_pat();
+        String ape_mat=usrForm.getApe_mat();
+        if(usuario!=null||nombre!=null||ape_pat!=null||ape_mat!=null){
+          user.setLogin(usuario);
+          user.setNombre(nombre);
+          user.setAp_pat(ape_pat);
+          user.setAp_mat(ape_mat);
+          findUsers(request,errors,user);
+        }else{
+          populateUsers(request,errors);
+        }
+                
         if (!errors.isEmpty()) saveErrors(request, errors);
         return mapping.findForward(Constants.SUCCESS);
     }
@@ -305,7 +320,16 @@ public class UsuarioAction extends DispatchAction {
           errors.add("login", new ActionMessage("errors.interno","Error en la busqueda de Usuarios"));  
         }
     }
-    
+   private void findUsers(HttpServletRequest request,ActionMessages errors,Usuario user) {
+       logger.debug("findUsers");
+       try{
+          List users = usrService.findUsers(user);
+          request.setAttribute("users", users);
+        }catch(Exception e){
+          logger.debug(e);  
+          errors.add("login", new ActionMessage("errors.interno","Error en la busqueda de Usuarios"));  
+        }
+    }
     public ActionForward setUpForInsertOrUpdate(ActionMapping mapping, ActionForm form, HttpServletRequest request, HttpServletResponse response) throws Exception {
         logger.debug("setUpForInsertOrUpdate");
         UsuarioForm userForm = (UsuarioForm)form;

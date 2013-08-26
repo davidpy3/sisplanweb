@@ -30,4 +30,5 @@ public interface MenuDAO {
     public Compania getCompaniaSisplan(Integer codigo);
     public Integer insertMenuCia(MenuCia menucia);
     public int deleteMenuCia(MenuCia menucia);
+    public List findMenus(Menu menu);
 }

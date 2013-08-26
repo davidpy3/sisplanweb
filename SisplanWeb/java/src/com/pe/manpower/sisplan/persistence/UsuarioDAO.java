@@ -30,4 +30,5 @@ public interface UsuarioDAO {
      public int delete(String codigo);
      public Integer GrabarSesion(Usuario user);
      public Integer BorrarSesion(Usuario user);
+     public List findUsers(Usuario user);
 }

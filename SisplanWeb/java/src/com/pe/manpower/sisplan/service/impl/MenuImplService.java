@@ -93,4 +93,9 @@ public class MenuImplService implements MenuService{
         dao.deleteMenuCia(menucia);
     }
 
+    @Override
+    public List findMenus(Menu menu) {
+         return dao.findMenus(menu);
+    }
+
 }

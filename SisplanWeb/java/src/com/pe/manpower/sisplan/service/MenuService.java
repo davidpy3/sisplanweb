@@ -36,4 +36,5 @@ public interface MenuService {
     public Compania getCompaniaSisplan(Integer codigo);
     public void insertMenuCia(MenuCia menucia);
     public void deleteMenuCia(MenuCia menucia);
+    public List findMenus(Menu menu);
 }

@@ -6,6 +6,7 @@ response.setDateHeader("Expires",-1);
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
+<%@ taglib prefix="html" uri="http://struts.apache.org/tags-html" %>
 <%@ taglib uri="http://displaytag.sf.net" prefix="display" %>
 <html>
 <head>
@@ -23,10 +24,42 @@ response.setDateHeader("Expires",-1);
 <body>
 <br>
 <div class="Titulo1AzulClaro">GESTION DE USUARIOS</div>
-
 <br>
 
-<br/><br/>
+<html:form action="/userProcess">
+    <table>
+         <tr>
+            <td class="tdLabel">Usuario:</td>
+            <td><html:text property="usuario" size="30"/>
+            </td>
+        </tr>
+        <tr>
+            <td class="tdLabel">Nombre:</td>
+            <td><html:text property="nombre" size="50"/>
+            </td>
+        </tr>
+        <tr>
+            <td class="tdLabel">Ap Paterno:</td>
+            <td><html:text property="ape_pat" size="50"/>
+            </td>
+        </tr>
+        <tr>
+            <td class="tdLabel">Ap Materno:</td>
+            <td><html:text property="ape_mat" size="50"/>
+            </td>
+        </tr>
+        <tr>
+            <td colspan="2">
+                <input type="hidden" name="dispatch" value="getUsers"/>
+                <br/>
+                <input type="submit" value="<fmt:message key="button.label.search"/>" class="butStnd"/>
+                &nbsp;&nbsp;&nbsp;
+                
+            </td>
+        </tr>
+    </table>
+</html:form>
+
 <c:url var="url" scope="page" value="/userSetUp.do">
    <c:param name="dispatch" value="setUpForInsertOrUpdate"/>
  </c:url>

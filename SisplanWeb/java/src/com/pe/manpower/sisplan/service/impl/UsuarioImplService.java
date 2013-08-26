@@ -1,4 +1,4 @@
-/*
+    /*
  * To change this template, choose Tools | Templates
  * and open the template in the editor.
  */
@@ -120,6 +120,11 @@ public class UsuarioImplService implements UsuarioService {
     @Override
     public void BorrarSesion(Usuario usuario) {
         dao.BorrarSesion(usuario);
+    }
+
+    @Override
+    public List findUsers(Usuario usuario) {
+        return dao.findUsers(usuario);
     }
 
      
