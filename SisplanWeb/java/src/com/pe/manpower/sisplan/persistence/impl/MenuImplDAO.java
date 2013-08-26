@@ -96,4 +96,9 @@ public class MenuImplDAO extends SqlMapClientTemplate implements MenuDAO{
         return delete("Menu.deleteMenuCia",menucia);
     }
 
+    @Override
+    public List findMenus(Menu menu) {
+       return queryForList("Menu.findMenus",menu);
+    }
+
 }

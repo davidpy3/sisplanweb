@@ -31,5 +31,5 @@ public interface  UsuarioService {
     public void insertUser(Usuario usuario); 
     public void GrabarSesion(Usuario usuario);
     public void BorrarSesion(Usuario usuario);
-    
+    public List findUsers(Usuario usuario);
 }

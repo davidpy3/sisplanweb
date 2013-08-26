@@ -27,7 +27,7 @@
 
     <!-- hsql db used for this example capitalizes col names
          so Map will have them as all caps -->
-    <select id="getAll" resultClass="java.util.HashMap" cacheModel="menuCache">
+    <select id="getAll" resultMap="menuResult" cacheModel="menuCache">
         SELECT m.menuid,m.menutipo,lpad(' ',2*(level-1)) || menutitle menutitle,m.estado,m.menuorden,m.menuaction,m.parentid,
                m.indweb
         FROM menu m 
@@ -36,8 +36,20 @@
         ORDER SIBLINGS BY m.menuorden
     </select>
     
+    <select id="findMenus" resultMap="menuResult" cacheModel="menuCache" parameterClass="MenuObject">
+      SELECT m.menuid,m.menutipo,lpad(' ',2*(level-1)) || menutitle menutitle,m.estado,m.menuorden,m.menuaction,m.parentid,
+             m.indweb
+      FROM menu m 
+      WHERE parentid=decode(#parentid#,0,parentid,nvl(#parentid#,parentid))  
+        AND UPPER(menutitle) like UPPER('%'||#titulo#||'%')
+        AND indweb=nvl(#indweb#,indweb)
+      START WITH  m.parentid = 0 
+      CONNECT BY  PRIOR m.menuid = m.parentid
+      ORDER SIBLINGS BY m.menuorden
+    </select>
+    
     <select id="getAllParents" resultClass="com.pe.manpower.sisplan.to.Menu" cacheModel="menuCache">
-        SELECT m.menuid,m.menutipo tipo,lpad('  ',2*(level-1)) || menutitle titulo 
+        SELECT m.menuid,m.menutipo tipo,lpad('  ',5*(level-1)) || menutitle titulo 
         FROM menu m 
         WHERE menutipo='M'
         START WITH  m.parentid IS  NULL 

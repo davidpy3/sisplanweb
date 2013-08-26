@@ -93,6 +93,18 @@
       ORDER BY USUARIO
     </select>
     
+    <select id="buscarUsuario" resultMap="usuarioResult" cacheModel="userCache" parameterClass="UsuarioObject">
+      SELECT USUARIO LOGIN, NOMBRE, ACTIVO estado, RUTA_IMPRESION, EMAIL, PASSWORD, TIPO_DOC_IDEN tipo_id_doc, 
+             NUM_DOC_IDEN num_doc_id,APE_PAT ap_pat, APE_MAT ap_mat, 
+             USUARIO_DB, PASSWORD_DB, ID_REPRE_LEGAL, ID_MODIFICA_VAC, IND_NOT_VEN_CONT, COD_STAFF
+      FROM ARCFUSU
+      WHERE UPPER(usuario) LIKE UPPER('%'||#login#||'%')
+        AND UPPER(nombre) LIKE UPPER('%'||#nombre#||'%')
+        AND UPPER(ape_pat) LIKE UPPER('%'||#ap_pat#||'%')
+        AND UPPER(ape_mat) LIKE UPPER('%'||#ap_mat#||'%')
+      ORDER BY USUARIO
+    </select>
+    
      <select id="getById" resultMap="usuarioResult" parameterClass="java.lang.String">
         SELECT usuario login,nombre,ape_pat ap_pat,ape_mat ap_mat,tipo_doc_iden tipo_id_doc,
             num_doc_iden num_doc_id,password,email,activo estado,ruta_impresion,usuario_db,

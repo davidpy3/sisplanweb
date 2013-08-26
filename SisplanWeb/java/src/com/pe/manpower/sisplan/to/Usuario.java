@@ -4,13 +4,14 @@
  */
 package com.pe.manpower.sisplan.to;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 
 /**
  *
  * @author G-AMARO
  */
-public class Usuario {
+public class Usuario implements Serializable{
     
 private long   id;
   private String login;
