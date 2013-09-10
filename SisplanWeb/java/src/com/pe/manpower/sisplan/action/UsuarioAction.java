@@ -26,6 +26,7 @@ import com.pe.manpower.sisplan.service.MenuService;
 import com.pe.manpower.sisplan.service.UsuarioService;
 import com.pe.manpower.sisplan.Constants;
 import com.consite.seguridad.PasswordService;
+import com.pe.manpower.sisplan.form.MenuForm;
 import com.pe.manpower.sisplan.form.RolForm;
 import com.pe.manpower.sisplan.form.UsuarioForm;
 import com.pe.manpower.sisplan.to.Compania;
@@ -334,7 +335,7 @@ public class UsuarioAction extends DispatchAction {
         logger.debug("setUpForInsertOrUpdate");
         UsuarioForm userForm = (UsuarioForm)form;
         if (isUpdate(request, userForm)) {
-            String id = userForm.getUsuario();
+            String id = userForm.getLogin();
             Usuario usuario = usrService.geUser(id);
             BeanUtils.copyProperties(userForm, usuario);
         }
@@ -349,7 +350,7 @@ public class UsuarioAction extends DispatchAction {
         //It's annoying that BeanUtils will convert nulls to 0 so have to do 0 check also,
         //or you could register a converter, which is the preferred way to handle it, but goes
         //beyond this demo
-        String id = userForm.getUsuario();
+        String id = userForm.getLogin();
         if (id == null || id.trim().length() == 0) {
             updateFlag = false;
         }
@@ -358,5 +359,73 @@ public class UsuarioAction extends DispatchAction {
      
     private void prep(HttpServletRequest request) {
         //request.setAttribute(Constants.PARENTS, menuService.getAllMenusParents());
+    } 
+     public ActionForward getAllUsers(ActionMapping mapping, ActionForm form, HttpServletRequest request, HttpServletResponse response) throws Exception {
+        logger.debug("getAllUsers");
+        ActionMessages errors = new ActionMessages(); 
+        populateUsers(request,errors);
+        if (!errors.isEmpty()) saveErrors(request, errors);
+        return mapping.findForward(Constants.SUCCESS);
+    }
+    
+     public ActionForward insertOrUpdate(ActionMapping mapping, ActionForm form, HttpServletRequest request, HttpServletResponse response) throws Exception {
+        logger.debug("insertOrUpdate");
+        UsuarioForm usrForm = (UsuarioForm)form;
+        ActionMessages errors = new ActionMessages(); 
+        if (validationSuccessful(request, usrForm)) {
+            Usuario usuario = new Usuario();
+            BeanUtils.copyProperties(usuario, usrForm);
+            if (isUpdate(request, usrForm)) {
+                logger.debug("update");
+                usrService.updateUser(usuario);
+       
+            } else {
+                logger.debug("insert");
+                usrService.insertUser(usuario);
+            }
+            populateUsers(request,errors);
+            return mapping.findForward(Constants.SUCCESS);
+        } else {
+            prep(request);
+            return mapping.findForward(Constants.FAILURE);
+        }
+    }
+     
+    private boolean validationSuccessful(HttpServletRequest request, UsuarioForm form) {
+        //if you really like using the validation framework stuff, you can just
+        //call  ActionErrors errors = form.validate( mapping, request ); in this method
+        //and check for errors being empty, if not save them and you're done.
+        //I end up finding the validation framework a bit annoying to work with, so I do it
+        //old-Skool way. Inevitably in a more complex app you end up having to perform
+        //more complex validation than the validation framework provides, so I just assume
+        //keep it all here in one place, versus having some handled by xml configuration and
+        //some hardcoded.
+        boolean isOk = true;
+        ActionMessages errors = new ActionMessages();
+        if (form.getLogin()== null || form.getLogin().trim().length() == 0) {
+            errors.add("login", new ActionMessage("errors.required","Usuario"));  
+        } 
+        if (form.getCod_staff() == null || form.getCod_staff() == 0) {
+            errors.add("cod_staff", new ActionMessage("errors.required","Cod Staff"));  
+        }
+        if (form.getNombre() == null || form.getNombre().trim().length() == 0) {
+            errors.add("nombre", new ActionMessage("errors.required", "Nombres"));
+        }
+        if (form.getAp_pat() == null || form.getAp_pat().trim().length() == 0) {
+            errors.add("ap_pat", new ActionMessage("errors.required", "Ap. Paterno"));
+        }
+        if (form.getAp_mat() == null || form.getAp_mat().trim().length() == 0) {
+            errors.add("ap_mat", new ActionMessage("errors.required", "Ap. Materno"));
+        }
+        if (form.getEmail() == null || form.getEmail().trim().length() == 0) {
+            errors.add("email", new ActionMessage("errors.required", "Email"));
+        }
+        
+        
+        if (!errors.isEmpty()) {
+            saveErrors(request, errors);
+            isOk = false;
+        }
+        return isOk;
     } 
 }

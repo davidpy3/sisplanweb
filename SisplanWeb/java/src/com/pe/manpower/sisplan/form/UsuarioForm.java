@@ -26,7 +26,56 @@ public class UsuarioForm extends org.apache.struts.action.ActionForm{
     private String id_modifica_vac;
     private String ind_not_ven_cont;
     private Integer cod_staff;
+    private String ap_pat;
+    private String ap_mat;
+    private String tipo_doc_id;
+    private String num_doc_id;
+    private String login;
 
+    public String getLogin() {
+        return login;
+    }
+
+    public void setLogin(String login) {
+        this.login = login;
+    }
+
+
+    public String getTipo_doc_id() {
+        return tipo_doc_id;
+    }
+
+    public void setTipo_doc_id(String tipo_doc_id) {
+        this.tipo_doc_id = tipo_doc_id;
+    }
+
+    public String getNum_doc_id() {
+        return num_doc_id;
+    }
+
+    public void setNum_doc_id(String num_doc_id) {
+        this.num_doc_id = num_doc_id;
+    }
+  
+    
+    public String getAp_pat() {
+        return ap_pat;
+    }
+
+    public void setAp_pat(String ap_pat) {
+        this.ap_pat = ap_pat;
+    }
+
+    public String getAp_mat() {
+        return ap_mat;
+    }
+
+    public void setAp_mat(String ap_mat) {
+        this.ap_mat = ap_mat;
+    }
+    
+    
+    
     public String getUsuario() {
         return usuario;
     }
