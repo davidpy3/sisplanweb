@@ -78,13 +78,8 @@
            <c:param name="dispatch" value="setUpForInsertOrUpdate"/>
       </c:url>
       <a href="${url}">Editar</a>
-      &nbsp;&nbsp;&nbsp;
-      <c:url var="url" scope="page" value="/menuProcess.do">
-        <c:param name="menuid" value="${row.menuid}"/>
-        <c:param name="dispatch" value="delete"/>
-      </c:url>
-      <a href="${url}">Eliminar</a>  
-    </display:column>>
+    &nbsp;&nbsp;
+    </display:column>
     <display:setProperty name="export.excel.filename" value="Menus.xls"/>
               
 </display:table> 

@@ -82,7 +82,7 @@
                 <br/>
                 <input type="submit" value="<fmt:message key="button.label.submit"/>" class="butStnd"/>
                 &nbsp;&nbsp;&nbsp;
-                <input type="submit" value="<fmt:message key="button.label.cancel"/>"  class="butStnd" onclick="document.MenuForm.dispatch.value='getMenus'"/>
+                <input type="submit" value="<fmt:message key="button.label.cancel"/>"  class="butStnd" onclick="document.MenuForm.dispatch.value='getAllMenus'"/>
             </td>
         </tr>
     </table>

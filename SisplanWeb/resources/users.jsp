@@ -78,6 +78,13 @@ response.setDateHeader("Expires",-1);
              <display:column title="Estado" property="estado" sortable="false" headerClass="sortable"  />
              <display:column title="Rep Legal" property="id_repre_legal" sortable="false" style="text-align:right;" headerClass="sortable"  />
              <display:column title="STAFF" property="cod_staff" sortable="false" style="text-align:right;" headerClass="sortable"  />
+             <display:column title="&nbsp;"  sortable="false" media="html" headerClass="sortable">
+               <c:url var="url" scope="page" value="/userSetUp.do">
+                <c:param name="login" value="${row.login}"/>
+                <c:param name="dispatch" value="setUpForInsertOrUpdate"/>
+               </c:url>
+               <a href="${url}">Editar</a>
+             </display:column>
              <display:setProperty name="export.excel.filename" value="Usuarios.xls"/>
               
     </display:table> 

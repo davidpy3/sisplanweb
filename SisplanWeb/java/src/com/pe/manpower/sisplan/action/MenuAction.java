@@ -200,5 +200,12 @@ public class MenuAction extends DispatchAction{
         }
         return isOk;
     } 
-     
+   public ActionForward getAllMenus(ActionMapping mapping, ActionForm form, HttpServletRequest request, HttpServletResponse response) throws Exception {
+        logger.debug("getAllMenus");
+       
+          populateMenus(request);
+       
+        prep(request);
+        return mapping.findForward(Constants.SUCCESS);
+    }    
 }
