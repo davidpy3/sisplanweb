@@ -38,6 +38,7 @@
                 scope="request"
                 parameter="dispatch">
             <forward name="success" path="/userForm.jsp"/>
+            <forward name="usrIntra" path="/usersIntranet.jsp"/>
         </action>
          <action
                 path="/userProcess"

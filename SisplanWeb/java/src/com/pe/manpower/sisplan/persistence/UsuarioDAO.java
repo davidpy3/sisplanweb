@@ -31,4 +31,5 @@ public interface UsuarioDAO {
      public Integer GrabarSesion(Usuario user);
      public Integer BorrarSesion(Usuario user);
      public List findUsers(Usuario user);
+     public List getUsersIntranet(Usuario user);
 }

@@ -294,7 +294,7 @@ public class UsuarioAction extends DispatchAction {
         UsuarioForm usrForm=(UsuarioForm) form;
         Usuario user=new Usuario();
         String usuario=usrForm.getUsuario();
-        String nombre=usrForm.getNombre();
+        String nombre=usrForm.getSnombre();
         String ape_pat=usrForm.getApe_pat();
         String ape_mat=usrForm.getApe_mat();
         if(usuario!=null||nombre!=null||ape_pat!=null||ape_mat!=null){
@@ -350,15 +350,37 @@ public class UsuarioAction extends DispatchAction {
         //It's annoying that BeanUtils will convert nulls to 0 so have to do 0 check also,
         //or you could register a converter, which is the preferred way to handle it, but goes
         //beyond this demo
+        Usuario usuario=null;
         String id = userForm.getLogin();
-        if (id == null || id.trim().length() == 0) {
+        if(id!=null)usuario = usrService.geUser(id);
+        
+        if (usuario == null) {
             updateFlag = false;
+            
         }
+        usuario=null;
         return updateFlag;
     }
      
     private void prep(HttpServletRequest request) {
         //request.setAttribute(Constants.PARENTS, menuService.getAllMenusParents());
+        logger.debug("prep");
+        String ap_pat=request.getParameter("ap_paterno");
+        String ap_mat=request.getParameter("ap_materno");
+        String nombre=request.getParameter("nombres");
+        
+        if(ap_pat==null)ap_pat="";
+        if(ap_mat==null)ap_pat="";
+        if(nombre==null)nombre="";
+        
+        Usuario user=new Usuario();
+        user.setAp_pat(ap_pat);
+        user.setAp_mat(ap_mat);
+        user.setNombre(nombre);
+        
+        List usersIntra=usrService.getUsersIntranet(user);
+        logger.debug("Usuario Intranet:"+usersIntra.size());
+        request.setAttribute("usersIntra", usersIntra);
     } 
      public ActionForward getAllUsers(ActionMapping mapping, ActionForm form, HttpServletRequest request, HttpServletResponse response) throws Exception {
         logger.debug("getAllUsers");
@@ -427,5 +449,11 @@ public class UsuarioAction extends DispatchAction {
             isOk = false;
         }
         return isOk;
-    } 
+    }
+   
+    public ActionForward showUsersIntranet(ActionMapping mapping, ActionForm form, HttpServletRequest request, HttpServletResponse response) throws Exception {
+        logger.debug("showUsersIntranet");
+        prep(request);
+        return mapping.findForward("usrIntra");
+   }
 }

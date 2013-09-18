@@ -35,7 +35,7 @@ response.setDateHeader("Expires",-1);
         </tr>
         <tr>
             <td class="tdLabel">Nombre:</td>
-            <td><html:text property="nombre" size="50"/>
+            <td><html:text property="snombre" size="50"/>
             </td>
         </tr>
         <tr>
@@ -81,6 +81,7 @@ response.setDateHeader("Expires",-1);
              <display:column title="&nbsp;"  sortable="false" media="html" headerClass="sortable">
                <c:url var="url" scope="page" value="/userSetUp.do">
                 <c:param name="login" value="${row.login}"/>
+                <c:param name="usuario" value="${row.login}"/>
                 <c:param name="dispatch" value="setUpForInsertOrUpdate"/>
                </c:url>
                <a href="${url}">Editar</a>

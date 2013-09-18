@@ -119,5 +119,10 @@ public class UsuarioImplDAO extends SqlMapClientTemplate implements UsuarioDAO {
         return queryForList("Usuario.buscarUsuario", user);
     }
 
+    @Override
+    public List getUsersIntranet(Usuario user) {
+        return queryForList("Usuario.getUsersIntranet", user);
+    }
+
    
 }
