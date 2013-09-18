@@ -127,5 +127,10 @@ public class UsuarioImplService implements UsuarioService {
         return dao.findUsers(usuario);
     }
 
+    @Override
+    public List getUsersIntranet(Usuario usuario) {
+        return dao.getUsersIntranet(usuario);
+    }
+
      
 }

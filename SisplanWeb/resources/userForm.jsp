@@ -8,6 +8,19 @@
     <link href="<c:url value='main.css'/>" rel="stylesheet" type="text/css"/>
     <style>td { white-space:nowrap; }</style>
     <title><c:out value="${insertUpdateTitle}"/></title>
+    <script lang="JavaScript">
+     function Open(){
+       var url='userSetUp.do?dispatch=showUsersIntranet';
+       var alto=screen.height-(0.4*screen.height);
+       var ancho=screen.width-(0.35*screen.width);
+       var date=new Date();
+       var minutes = date.getMinutes();
+		var seconds = date.getSeconds();
+       var win='M'+minutes+'S'+seconds;
+        window.open(url,'_blank', "height="+alto+",width="+ancho+",left=0,top=0,location=no,menubar=no,resizable=no,scrollbars,status,toolbar=no");
+    
+       }    
+    </script>    
 </head>
 <body>
 <!--div class="titleDiv"><fmt:message key="application.title"/></div-->
@@ -16,14 +29,23 @@
     <table>
          <tr>
             <td class="tdLabel">Usuario:</td>
-            <td><html:text property="login" size="30"/>
+            <td>
+               <c:if test="${insertUpdateTitle=='Nuevo Usuario'}" >
+                   <html:text property="login" size="30"/>
+               </c:if>
+               <c:if test="${insertUpdateTitle=='Editar Usuario'}" >
+                   <html:text property="login" size="30" readonly="true"/>
+               </c:if>
                  <html:errors property="login"/>
             </td>
         </tr>
          <tr>
             <td class="tdLabel">Staff:</td>
-            <td><html:text property="cod_staff" size="30"/>
-                 <html:errors property="cod_staff"/>
+            <td><html:text property="cod_staff"  styleId="cod_staff" size="30"  readonly="true" />
+                <c:if test="${insertUpdateTitle=='Nuevo Usuario'}" >
+                  <a href="javascript:Open();"><img src="imagenes/boton_buscar.gif"></a>    
+                </c:if>
+                <html:errors property="cod_staff"/>
             </td>
         </tr>
          <tr>
@@ -71,7 +93,7 @@
         </tr>
         <tr>
             <td class="tdLabel">Estado:</td>
-            <td><html:select property="activo">
+            <td><html:select property="estado">
                   <html:option value="S">
                       ACTIVO
                   </html:option>
@@ -80,7 +102,7 @@
                   </html:option>
                 </html:select>
                   
-                <html:errors property="activo"/></td>
+                <html:errors property="estado"/></td>
         </tr>
         <tr>
             <td class="tdLabel">Email:</td>
@@ -91,11 +113,11 @@
         <tr>
             <td class="tdLabel">Rep Legal:</td>
             <td><html:select property="id_repre_legal">
-                  <html:option value="S">
-                      SI
-                  </html:option>
                   <html:option value="N">
                       NO
+                  </html:option>
+                  <html:option value="S">
+                      SI
                   </html:option>
                 </html:select>
                 <html:errors property="id_repre_legal"/></td>
@@ -103,14 +125,28 @@
         <tr>
             <td class="tdLabel">Notif. Venc Contratos:</td>
             <td><html:select property="ind_not_ven_cont">
-                  <html:option value="S">
-                      SI
-                  </html:option>
                   <html:option value="N">
                       NO
                   </html:option>
+                  <html:option value="S">
+                      SI
+                  </html:option>
+                
                 </html:select>
                 <html:errors property="ind_not_ven_cont"/></td>
+        </tr>
+        <tr>
+            <td class="tdLabel">Modifica Vacacaciones:</td>
+            <td><html:select property="id_modifica_vac">
+                  <html:option value="N">
+                      NO
+                  </html:option>
+                  <html:option value="S">
+                      SI
+                  </html:option>
+                
+                </html:select>
+                <html:errors property="id_modifica_vac"/></td>
         </tr>
         <tr>
             <td class="tdLabel">Ruta Impresion:</td>

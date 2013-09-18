@@ -32,4 +32,5 @@ public interface  UsuarioService {
     public void GrabarSesion(Usuario usuario);
     public void BorrarSesion(Usuario usuario);
     public List findUsers(Usuario usuario);
+    public List getUsersIntranet(Usuario usuario);
 }

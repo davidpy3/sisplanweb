@@ -31,6 +31,28 @@ public class UsuarioForm extends org.apache.struts.action.ActionForm{
     private String tipo_doc_id;
     private String num_doc_id;
     private String login;
+    private String estado;
+    private String snombre;
+
+    public String getSnombre() {
+        return snombre;
+    }
+
+    public void setSnombre(String snombre) {
+        this.snombre = snombre;
+    }
+    
+    
+
+    public String getEstado() {
+        return estado;
+    }
+
+    public void setEstado(String estado) {
+        this.estado = estado;
+    }
+    
+    
 
     public String getLogin() {
         return login;

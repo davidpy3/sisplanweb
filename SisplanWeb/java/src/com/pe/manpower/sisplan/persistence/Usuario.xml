@@ -149,4 +149,17 @@
       WHERE  sesion_id   = #session#
         AND  sesion_user = #login#       
     </insert>
+    
+    <select id="getUsersIntranet" resultClass="java.util.HashMap" parameterClass="UsuarioObject">
+      SELECT U.APELLIDOPAT, U.APELLIDOMAT, U.NOMBRES, U.USUARIO, U.EMAIL, 
+             DECODE(U.TIPDOCIDENT,'DNI',1,'C.Extr.',4,'Pasap.',5) TIPDOCIDENT, U.CODDOCIDENT
+      FROM WEBAPP.USUARIOS U
+      WHERE INACTIVO = '0'
+        AND GRUPO NOT IN ('I')
+         AND UPPER(u.apellidopat) like '%'||UPPER(#ap_pat#)||'%'
+         AND UPPER(u.apellidomat) like '%'||UPPER(#ap_mat#)||'%'
+         AND UPPER(u.nombres) like '%'||UPPER(#nombre#)||'%'
+      ORDER BY U.APELLIDOPAT, U.APELLIDOMAT, U.NOMBRES
+    </select>
+    
 </sqlMap>
