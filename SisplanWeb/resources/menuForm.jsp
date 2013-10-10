@@ -6,12 +6,14 @@
 <html>
 <head>
     <link href="<c:url value='main.css'/>" rel="stylesheet" type="text/css"/>
+    <link href="css/espacio.css" type="text/css" rel="stylesheet">
     <style>td { white-space:nowrap; }</style>
     <title><c:out value="${insertUpdateTitle}"/></title>
 </head>
 <body>
 <!--div class="titleDiv"><fmt:message key="application.title"/></div-->
-<h1><c:out value="${insertUpdateTitle}"/></h1>
+<div class="Titulo1AzulClaro"><c:out value="${insertUpdateTitle}"/></div>
+<br>
 <html:form action="/menuProcess">
     <table>
          <tr>

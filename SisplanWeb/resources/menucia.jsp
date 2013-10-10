@@ -4,11 +4,12 @@
 <html>
 <head>
     <link href="<c:url value='main.css'/>" rel="stylesheet" type="text/css"/>
+    <link href="css/espacio.css" type="text/css" rel="stylesheet">
     <title><fmt:message key="label.menus"/></title>
 </head>
 <body>
 <!--div class="titleDiv"><fmt:message key="application.title"/></div-->
-<h1><fmt:message key="label.menucia"/>&nbsp;&nbsp; <c:out value="${cia.nombre}"/> </h1>
+<div class="Titulo1AzulClaro"><fmt:message key="label.menucia"/>&nbsp;&nbsp; <c:out value="${cia.nombre}"/></div>
 <br/><br/>
 <table class="borderAll">
     <tr>

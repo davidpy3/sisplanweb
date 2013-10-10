@@ -39,6 +39,7 @@
                 parameter="dispatch">
             <forward name="success" path="/userForm.jsp"/>
             <forward name="usrIntra" path="/usersIntranet.jsp"/>
+            <forward name="setpassword" path="/setpassword.jsp"/>
         </action>
          <action
                 path="/userProcess"
@@ -48,7 +49,8 @@
                 parameter="dispatch">
             <forward name="failure" path="/userForm.jsp"/>
             <forward name="success" path="/users.jsp"/>
-            
+            <forward name="changepwdok" path="/setpasswordok.jsp"/>
+            <forward name="changepwd" path="/setpassword.jsp"/>
         </action>
         
         <action
