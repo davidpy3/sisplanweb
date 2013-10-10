@@ -190,7 +190,7 @@ public class UsuarioAction extends DispatchAction {
     public ActionForward cerrarSesion(ActionMapping mapping, ActionForm form, HttpServletRequest request, HttpServletResponse response) throws Exception {
        logger.debug("cerrarSesion");
        Usuario usr=(Usuario)request.getSession().getAttribute("usr");
-       usrService.BorrarSesion(usr);
+       if(usr!=null)usrService.BorrarSesion(usr);
        clearSession(request);
        return mapping.findForward(Constants.SUCCESS);
     }
@@ -408,6 +408,7 @@ public class UsuarioAction extends DispatchAction {
             populateUsers(request,errors);
             return mapping.findForward(Constants.SUCCESS);
         } else {
+            usrForm.setUsuario(usrForm.getLogin());
             prep(request);
             return mapping.findForward(Constants.FAILURE);
         }
@@ -427,9 +428,9 @@ public class UsuarioAction extends DispatchAction {
         if (form.getLogin()== null || form.getLogin().trim().length() == 0) {
             errors.add("login", new ActionMessage("errors.required","Usuario"));  
         } 
-        if (form.getCod_staff() == null || form.getCod_staff() == 0) {
+        /*if (form.getCod_staff() == null || form.getCod_staff() == 0) {
             errors.add("cod_staff", new ActionMessage("errors.required","Cod Staff"));  
-        }
+        }*/
         if (form.getNombre() == null || form.getNombre().trim().length() == 0) {
             errors.add("nombre", new ActionMessage("errors.required", "Nombres"));
         }
@@ -456,4 +457,38 @@ public class UsuarioAction extends DispatchAction {
         prep(request);
         return mapping.findForward("usrIntra");
    }
+   
+    public ActionForward setUpForChangePassword(ActionMapping mapping, ActionForm form, HttpServletRequest request, HttpServletResponse response) throws Exception {
+        logger.debug("setUpForChangePassword");
+        String id = request.getParameter("user");
+        Usuario usuario = usrService.geUser(id);
+                
+        request.getSession().setAttribute("usrpwd",usuario);
+        return mapping.findForward("setpassword");
+    }
+    public ActionForward setPassword(ActionMapping mapping, ActionForm form, HttpServletRequest request, HttpServletResponse response) throws Exception {
+        logger.debug("cambiar password");
+         UsuarioForm loginfrm=(UsuarioForm) form;
+         String result="";
+         String forward="";
+        if(loginfrm.getPassword1().equals(loginfrm.getPassword2()) ) {
+          logger.debug("verdadero");
+          Usuario user=new Usuario();
+          user.setLogin(loginfrm.getLogin());
+          user.setPassword(PasswordService.getInstance().encrypt(loginfrm.getPassword1()));
+          result=usrService.CambiarPassword(user);
+          if(result.equals("OK")){
+              result="Se cambio el password correctamente";
+              forward="changepwdok";
+          }else{
+              result="Error al cambiar el password";
+              forward="changepwd";
+          }
+          request.setAttribute("msg",result);
+        }else{
+          logger.debug("no coinciden password");
+          forward="changepwd";
+         }
+         return mapping.findForward(forward);
+    }
 }

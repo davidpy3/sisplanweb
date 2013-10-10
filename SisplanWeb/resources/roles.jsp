@@ -4,14 +4,17 @@
 <html>
 <head>
     <link href="<c:url value='main.css'/>" rel="stylesheet" type="text/css"/>
+    <link href="css/espacio.css" type="text/css" rel="stylesheet">
+
     <title><fmt:message key="label.menus"/></title>
 </head>
 <body>
 <!--div class="titleDiv"><fmt:message key="application.title"/></div-->
-<h1><fmt:message key="label.roles"/></h1>
+<div class="Titulo1AzulClaro"><fmt:message key="label.roles"/></div>
 <c:url var="url" scope="page" value="/rolSetUp.do">
     <c:param name="dispatch" value="setUpForInsertOrUpdate"/>
 </c:url>
+<br/>
 <a href="${url}">Nuevo Rol</a>
 <br/><br/>
 <table class="borderAll">
@@ -31,13 +34,7 @@
                 </c:url>
                 <a href="${url}">Editar</a>
                 &nbsp;&nbsp;&nbsp;
-                <c:url var="url" scope="page" value="/rolProcess.do">
-                    <c:param name="id" value="${rolMap.ID}"/>
-                    <c:param name="dispatch" value="delete"/>
-                </c:url>
-                <a href="${url}">Eliminar</a>
-                &nbsp;&nbsp;&nbsp;
-               
+                              
             </td>
         </tr>
     </c:forEach>
