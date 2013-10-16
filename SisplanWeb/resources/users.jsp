@@ -25,7 +25,14 @@ response.setDateHeader("Expires",-1);
 <br>
 <div class="Titulo1AzulClaro">GESTION DE USUARIOS</div>
 <br>
-
+<table style="" >
+        <tr>
+            <td class="tdLabel" align="center" width="100%">
+             <div class="TextoNormalResaltado"><c:out value="${UsuarioForm.mensaje}"/></div>
+            </td>
+        </tr>
+</table>        
+ 
 <html:form action="/userProcess">
     <table>
          <tr>
