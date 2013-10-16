@@ -379,7 +379,7 @@ public class UsuarioAction extends DispatchAction {
         user.setNombre(nombre);
         
         List usersIntra=usrService.getUsersIntranet(user);
-        logger.debug("Usuario Intranet:"+usersIntra.size());
+        logger.debug("Usuarios Intranet:"+usersIntra.size());
         request.setAttribute("usersIntra", usersIntra);
     } 
      public ActionForward getAllUsers(ActionMapping mapping, ActionForm form, HttpServletRequest request, HttpServletResponse response) throws Exception {
@@ -400,10 +400,12 @@ public class UsuarioAction extends DispatchAction {
             if (isUpdate(request, usrForm)) {
                 logger.debug("update");
                 usrService.updateUser(usuario);
+                usrForm.setMensaje(Constants.MSG_UPD_OK);
        
             } else {
                 logger.debug("insert");
                 usrService.insertUser(usuario);
+                usrForm.setMensaje(Constants.MSG_INS_OK);
             }
             populateUsers(request,errors);
             return mapping.findForward(Constants.SUCCESS);

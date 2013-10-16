@@ -26,5 +26,7 @@ public abstract class Constants {
     public static final String USUARIOSNOROL = "usuariosnorol";
     public static final String CIA = "cia";
     public static final String MENUCIA = "menucia";
+    public static final String MSG_UPD_OK = "Registro modificado correctamente";
+    public static final String MSG_INS_OK = "Registro grabado correctamente";
 }
 

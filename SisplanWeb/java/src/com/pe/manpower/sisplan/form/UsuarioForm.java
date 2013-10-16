@@ -4,6 +4,11 @@
  */
 package com.pe.manpower.sisplan.form;
 
+import java.io.UnsupportedEncodingException;
+import java.nio.charset.Charset;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+
 /**
  *
  * @author G-AMARO
@@ -35,7 +40,16 @@ public class UsuarioForm extends org.apache.struts.action.ActionForm{
     private String snombre;
     private String password1;
     private String password2;
+    private String mensaje;
 
+    public String getMensaje() {
+        return mensaje;
+    }
+
+    public void setMensaje(String mensaje) {
+        this.mensaje = mensaje;
+    }
+    
     public String getPassword1() {
         return password1;
     }
@@ -104,7 +118,11 @@ public class UsuarioForm extends org.apache.struts.action.ActionForm{
     }
 
     public void setAp_pat(String ap_pat) {
-        this.ap_pat = ap_pat;
+        
+       
+            this.ap_pat = ap_pat;
+       
+        
     }
 
     public String getAp_mat() {
@@ -130,7 +148,11 @@ public class UsuarioForm extends org.apache.struts.action.ActionForm{
     }
 
     public void setNombre(String nombre) {
-        this.nombre = nombre;
+       
+      
+        this.nombre=nombre;
+        
+       
     }
 
     public String getActivo() {
