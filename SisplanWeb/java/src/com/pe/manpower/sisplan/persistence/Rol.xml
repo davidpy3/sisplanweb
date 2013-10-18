@@ -66,6 +66,10 @@
         FROM usuario_rol a, rol b
         WHERE UPPER(a.usuario)=UPPER(#value#)
          AND b.COD_ROL=a.COD_ROL
+         AND EXISTS ( SELECT 1
+                      FROM menu_rol c
+                      WHERE c.cod_rol=a.cod_rol
+                     )
         ORDER BY 1
     </select>
     
