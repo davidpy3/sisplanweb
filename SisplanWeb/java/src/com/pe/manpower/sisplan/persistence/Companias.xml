@@ -16,15 +16,17 @@
     <!-- hsql db used for this example capitalizes col names
          so Map will have them as all caps -->
     <select id="getCompanias" resultClass="com.pe.manpower.sisplan.to.Compania" cacheModel="CompaniasCache">
-        select codigo,dscrpcion nombre
-        from companias
-        order by 2
+       SELECT no_cia codigo,nombre
+       FROM plm_cias
+       WHERE IND_EMPRESA_PROPIA='S'
+       order by 2
     </select>
 
     <select id="getCompania" resultMap="companiasResult" parameterClass="java.lang.Integer">
-        select codigo,dscrpcion nombre
-        from companias
-        where codigo=#value#
+       SELECT no_cia codigo,nombre
+       FROM plm_cias
+       WHERE IND_EMPRESA_PROPIA='S'
+         and no_cia=to_char(#value#,'fm00')
     </select>
 
   <select id="getCompaniasSisplan" resultClass="com.pe.manpower.sisplan.to.Compania" cacheModel="CompaniasCache">

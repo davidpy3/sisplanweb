@@ -240,6 +240,7 @@ public class UsuarioAction extends DispatchAction {
         String action="";
         LoginForm loginfrm=(LoginForm) form;
         usr=(Usuario)request.getSession().getAttribute("usr");
+        if(usr==null) return mapping.findForward(Constants.LOGIN);
         Integer rolid=loginfrm.getRolid();
         Rol rol=usrService.getRol(rolid);
         usr.setRol(rol);
@@ -276,6 +277,7 @@ public class UsuarioAction extends DispatchAction {
         String action="";
         LoginForm loginfrm=(LoginForm) form;
         usr=(Usuario)request.getSession().getAttribute("usr");
+        if(usr==null) return mapping.findForward(Constants.LOGIN);
         String no_cia=loginfrm.getNo_cia();
         Compania cia=usrService.getCompania(Integer.parseInt(no_cia));
         usr.setCia(cia);
